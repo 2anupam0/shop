@@ -76,11 +76,8 @@
       <div class="cake-card reveal" style="transition-delay:<%= 0.1 * (idx + 1) %>s">
         <% if (cake.featured) { %><div class="cake-ribbon featured">★ Featured</div><% } %>
         <div class="img-wrap">
-          <% if (cake.image && cake.image !== '/images/placeholder.jpg') { %>
-          <img src="<%= cake.image %>" alt="<%= cake.name %>" loading="lazy">
-          <% } else { %>
-          <div class="img-placeholder">🎂</div>
-          <% } %>
+          <img src="<%= cake.image || '' %>" alt="<%= cake.name %>" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.img-placeholder').style.display='flex'">
+          <div class="img-placeholder" style="display:none;">🎂</div>
         </div>
         <div class="body">
           <span class="category-tag"><%= cake.category %></span>

@@ -85,11 +85,8 @@
               <% cakes.forEach(cake => { %>
               <tr>
                 <td>
-                  <% if (cake.image && cake.image !== '/images/placeholder.jpg') { %>
-                  <img src="<%= cake.image %>" alt="" class="thumb">
-                  <% } else { %>
-                  <div class="thumb" style="display:flex;align-items:center;justify-content:center;background:#EDE4DC;">🍰</div>
-                  <% } %>
+                  <img src="<%= cake.image || '' %>" alt="" class="thumb" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-fallback').style.display='flex'">
+                  <div class="thumb-fallback" style="display:none;width:50px;height:50px;border-radius:10px;background:#EDE4DC;align-items:center;justify-content:center;">🍰</div>
                 </td>
                 <td><strong><%= cake.name %></strong></td>
                 <td><%= cake.category %></td>

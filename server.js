@@ -128,7 +128,7 @@ app.post('/admin/cakes', isAdmin, upload.single('image'), (req, res) => {
     category: req.body.category,
     price: parseFloat(req.body.price) || 0,
     description: req.body.description || '',
-    image: req.file ? '/uploads/' + req.file.filename : '/images/placeholder.jpg',
+    image: req.file ? '/uploads/' + req.file.filename : '',
     featured: req.body.featured === 'on'
   };
   cakes.push(cake);

@@ -84,7 +84,7 @@
 (function() {
   var loader = document.createElement('div');
   loader.className = 'page-loader';
-  loader.innerHTML = '<div class="loader-content"><div class="loader-icon">🎂</div><div class="loader-text">JIVAN</div><div class="loader-sub">Cake Shop</div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>';
+  loader.innerHTML = '<div class="loader-content"><div class="loader-icon">🎂</div><div class="loader-text">ANUP</div><div class="loader-sub">Cake Shop</div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>';
   document.body.prepend(loader);
   window.addEventListener('load', function() {
     setTimeout(function() { loader.classList.add('hide'); }, 600);
@@ -193,7 +193,7 @@ function openOrderModal(cakeName) {
     '<button class="close-btn" onclick="closeOrderModal()">✕</button>',
     '<h2>Order Cake</h2>',
     '<p style="color:#6b7280;margin-bottom:16px;">' + (cakeName ? 'Ordering: <strong>' + cakeName + '</strong>' : 'Tell us what you\'d like!') + '</p>',
-    '<a href="https://wa.me/9779865253798?text=' + encodeURIComponent('Hi Jivan Cake Shop! I want to order' + (cakeName ? ' ' + cakeName : ' a cake') + '.') + '" target="_blank" class="btn btn-whatsapp" style="width:100%;text-align:center;justify-content:center;margin-bottom:12px;">',
+    '<a href="https://wa.me/9779865253798?text=' + encodeURIComponent('Hi ANUP Cake Shop! I want to order' + (cakeName ? ' ' + cakeName : ' a cake') + '.') + '" target="_blank" class="btn btn-whatsapp" style="width:100%;text-align:center;justify-content:center;margin-bottom:12px;">',
     'Order via WhatsApp',
     '</a>',
     '<div class="or-divider">— or —</div>',
@@ -228,7 +228,7 @@ function submitOrder(e) {
   var phone = data.get('phone');
   var message = data.get('message');
   var cake = data.get('cakeName');
-  var text = 'Hi Jivan Cake Shop!%0A%0AName: ' + encodeURIComponent(name) + '%0APhone: ' + phone + '%0A' + (cake ? 'Cake: ' + encodeURIComponent(cake) + '%0A' : '') + 'Order: ' + encodeURIComponent(message);
+  var text = 'Hi ANUP Cake Shop!%0A%0AName: ' + encodeURIComponent(name) + '%0APhone: ' + phone + '%0A' + (cake ? 'Cake: ' + encodeURIComponent(cake) + '%0A' : '') + 'Order: ' + encodeURIComponent(message);
   window.open('https://wa.me/9779865253798?text=' + text, '_blank');
   showToast('Order sent! Check WhatsApp', 'success');
   closeOrderModal();
@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       if (typeof confettiBurst === 'function') confettiBurst(40);
       var data = new FormData(this);
-      var text = 'Hi Jivan Cake Shop!%0AName: ' + encodeURIComponent(data.get('name')) + '%0APhone: ' + data.get('phone') + '%0AMessage: ' + encodeURIComponent(data.get('message'));
+      var text = 'Hi ANUP Cake Shop!%0AName: ' + encodeURIComponent(data.get('name')) + '%0APhone: ' + data.get('phone') + '%0AMessage: ' + encodeURIComponent(data.get('message'));
       window.open('https://wa.me/9779865253798?text=' + text, '_blank');
       showToast('Message sent! Check WhatsApp', 'success');
       this.reset();

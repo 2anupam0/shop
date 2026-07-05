@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= locals.title ? locals.title + ' | JIVAN CAKE SHOP' : 'JIVAN CAKE SHOP' %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+  <div class="container">
+    <a href="/" class="logo">
+      <span class="logo-icon">🎂</span>
+      <span class="logo-text">
+        <span class="logo-name">JIVAN</span>
+        <span class="logo-sub">CAKE SHOP</span>
+      </span>
+    </a>
+    <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+    <nav>
+      <a href="/" class="<%= path === '/' ? 'active' : '' %>">Home</a>
+      <a href="/menu" class="<%= path === '/menu' ? 'active' : '' %>">Menu</a>
+      <a href="/contact" class="<%= path === '/contact' ? 'active' : '' %>">Contact</a>
+    </nav>
+  </div>
+</header>

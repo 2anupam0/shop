@@ -1,0 +1,51 @@
+<%- include('partials/header', { path: '/menu', title: 'Our Menu' }) %>
+
+<div class="menu-header">
+  <div class="container">
+    <div class="section-decoration">✦ ✦ ✦</div>
+    <h1 class="section-title reveal">Our <span class="highlight">Cake Menu</span></h1>
+    <div class="divider reveal reveal-delay-1"><span class="divider-line"></span><span class="divider-icon">✦</span><span class="divider-line"></span></div>
+    <p class="section-subtitle reveal reveal-delay-2" style="margin-bottom:0;">Choose from our wide selection of handcrafted cakes, baked fresh daily.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="category-tabs reveal" id="categoryTabs">
+    <button class="active" data-cat="all">All</button>
+    <% categories.forEach(cat => { %>
+    <button data-cat="<%= cat %>"><%= cat %></button>
+    <% }) %>
+  </div>
+</div>
+
+<section class="section" style="padding-top:10px;">
+  <div class="container">
+    <div class="cake-grid" id="cakeGrid">
+      <% cakes.forEach((cake, idx) => { %>
+      <div class="cake-card reveal" data-category="<%= cake.category %>" style="transition-delay:<%= 0.05 * (idx + 1) %>s">
+        <div class="img-wrap">
+          <% if (cake.image && cake.image !== '/images/placeholder.jpg') { %>
+          <img src="<%= cake.image %>" alt="<%= cake.name %>" loading="lazy">
+          <% } else { %>
+          <div class="img-placeholder">🎂</div>
+          <% } %>
+        </div>
+        <div class="body">
+          <span class="category-tag"><%= cake.category %></span>
+          <h3><%= cake.name %></h3>
+          <div class="price"><span class="currency">रू</span> <%= cake.price.toLocaleString() %></div>
+          <p><%= cake.description %></p>
+          <div class="card-actions">
+            <button class="btn btn-primary" onclick="openOrderModal('<%= cake.name %>')">Order</button>
+            <a href="https://wa.me/9779865253798?text=Hi%20Jivan%20Cake%20Shop!%20I%20want%20to%20order%20<%= encodeURIComponent(cake.name) %>" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+<script src="/js/main.js"></script>
+<script src="/js/menu.js"></script>

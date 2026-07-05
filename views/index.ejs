@@ -1,0 +1,119 @@
+<%- include('partials/header', { path: '/', title: 'Fresh Cakes Made Daily' }) %>
+
+<section class="hero">
+  <div class="hero-blob"></div>
+  <div class="hero-blob"></div>
+  <div class="hero-blob"></div>
+  <div class="hero-particles"></div>
+  <div class="container">
+    <div class="hero-badge reveal" style="transition-delay:0.1s">Freshly Baked Every Day</div>
+    <h1 class="reveal" style="transition-delay:0.2s">Artisan <span class="highlight">Cakes</span> & Sweet Delights</h1>
+    <div class="divider reveal" style="transition-delay:0.25s"><span class="divider-line"></span><span class="divider-icon">✦</span><span class="divider-line"></span></div>
+    <p class="sub-headline reveal" style="transition-delay:0.3s">Handcrafted with love using premium ingredients — where every slice tells a story of tradition, taste & pure indulgence.</p>
+    <div class="hero-actions reveal" style="transition-delay:0.5s">
+      <button class="btn btn-primary" onclick="openOrderModal()">Order Now →</button>
+      <a href="/menu" class="btn btn-outline">View Menu</a>
+    </div>
+  </div>
+  <div class="hero-scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<% if (offer && offer.active && offer.text) { %>
+<div class="offer-banner">
+  <div class="offer-marquee">
+    <span>🎉 <%= offer.text %></span>
+    <span>🎉 <%= offer.text %></span>
+    <span>🎉 <%= offer.text %></span>
+    <span>🎉 <%= offer.text %></span>
+  </div>
+</div>
+<% } %>
+
+<!-- Stats Counter -->
+<section class="stats-section reveal">
+  <div class="dot-pattern"></div>
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-icon">🎂</div>
+        <div class="stat-number" data-count="1500">0</div>
+        <div class="stat-divider"></div>
+        <div class="stat-label">Cakes Baked</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-icon">😊</div>
+        <div class="stat-number" data-count="3000">0</div>
+        <div class="stat-divider"></div>
+        <div class="stat-label">Happy Customers</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-3">
+        <div class="stat-icon">✨</div>
+        <div class="stat-number" data-count="50">0</div>
+        <div class="stat-divider"></div>
+        <div class="stat-label">Cake Varieties</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-4">
+        <div class="stat-icon">🏆</div>
+        <div class="stat-number" data-count="5">0</div>
+        <div class="stat-divider"></div>
+        <div class="stat-label">Years of Service</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--cream);">
+  <div class="dot-pattern"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="section-decoration">✦ ✦ ✦</div>
+    <h2 class="section-title reveal">Featured <span class="highlight">Cakes</span></h2>
+    <p class="section-subtitle reveal reveal-delay-1">Our most beloved creations, baked fresh just for you</p>
+    <div class="cake-grid">
+      <% cakes.forEach((cake, idx) => { %>
+      <div class="cake-card reveal" style="transition-delay:<%= 0.1 * (idx + 1) %>s">
+        <% if (cake.featured) { %><div class="cake-ribbon featured">★ Featured</div><% } %>
+        <div class="img-wrap">
+          <% if (cake.image && cake.image !== '/images/placeholder.jpg') { %>
+          <img src="<%= cake.image %>" alt="<%= cake.name %>" loading="lazy">
+          <% } else { %>
+          <div class="img-placeholder">🎂</div>
+          <% } %>
+        </div>
+        <div class="body">
+          <span class="category-tag"><%= cake.category %></span>
+          <h3><%= cake.name %></h3>
+          <div class="price-tag">
+            <span class="price-icon">💰</span>
+            <span class="price"><span class="currency">रू</span> <%= cake.price.toLocaleString() %></span>
+          </div>
+          <p><%= cake.description %></p>
+          <div class="card-actions">
+            <button class="btn btn-primary" onclick="openOrderModal('<%= cake.name %>')">Order</button>
+            <a href="https://wa.me/9779865253798?text=Hi%20Jivan%20Cake%20Shop!%20I%20want%20to%20order%20<%= encodeURIComponent(cake.name) %>" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section style="background:linear-gradient(135deg,var(--cream-200),var(--brown-50));padding:80px 0;text-align:center;position:relative;overflow:hidden;">
+  <div class="dot-pattern"></div>
+  <div style="position:absolute;inset:0;opacity:0.03;font-size:14rem;display:flex;align-items:center;justify-content:center;pointer-events:none;color:var(--brown-300);">🎂</div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="section-decoration">🎉 🎉 🎉</div>
+    <h2 class="section-title reveal" style="font-size:2.4rem;">Special <span class="highlight">Offer</span></h2>
+    <p class="section-subtitle reveal reveal-delay-1" style="margin-bottom:30px;">Get <strong style="color:var(--brown-500);font-size:1.3rem;background:var(--brown-50);padding:3px 16px;border-radius:50px;border:1px solid var(--brown-200);">50g free</strong> on every 1 pound cake order! Don't miss out on this sweet deal.</p>
+    <div class="reveal reveal-delay-2" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn btn-gold" onclick="openOrderModal()">Claim Your Offer →</button>
+      <a href="https://wa.me/9779865253798?text=Hi%20Jivan%20Cake%20Shop!%20I%20want%20to%20order%20a%20cake" target="_blank" class="btn btn-whatsapp">Order on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+<script src="/js/main.js"></script>

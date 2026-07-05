@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "name": "Chocolate Dream",
+    "category": "Chocolate",
+    "price": 1200,
+    "description": "Rich moist chocolate cake layered with silky chocolate ganache and topped with chocolate shavings.",
+    "image": "/uploads/1783186514294-Screenshot 2026-07-04 231945.png",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "name": "Vanilla Buttercream",
+    "category": "Vanilla",
+    "price": 1000,
+    "description": "Classic vanilla sponge with smooth buttercream frosting and rainbow sprinkles.",
+    "image": "/uploads/1783186600018-Screenshot 2026-07-04 232117.png",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "name": "Red Velvet",
+    "category": "Custom",
+    "price": 1500,
+    "description": "Velvety red cake with cream cheese frosting, a timeless favorite for special occasions.",
+    "image": "/uploads/1783186686598-Screenshot 2026-07-04 232244.png",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "name": "Black Forest",
+    "category": "Chocolate",
+    "price": 1400,
+    "description": "Decadent chocolate cake with cherries, whipped cream, and chocolate flakes.",
+    "image": "/uploads/1783187224844-Screenshot 2026-07-04 233138.png",
+    "featured": false
+  },
+  {
+    "id": 5,
+    "name": "Fruit Cake",
+    "category": "Custom",
+    "price": 1800,
+    "description": "Premium fruit cake loaded with dry fruits, nuts, and a hint of brandy.",
+    "image": "/uploads/1783186772681-Screenshot 2026-07-04 232412.png",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "name": "Pineapple Delight",
+    "category": "Vanilla",
+    "price": 1100,
+    "description": "Light vanilla cake with pineapple chunks and creamy frosting.",
+    "image": "/uploads/1783186967508-Screenshot 2026-07-04 232708.png",
+    "featured": false
+  },
+  {
+    "id": 7,
+    "name": "Chocolate Truffle",
+    "category": "Chocolate",
+    "price": 1600,
+    "description": "Ultra-rich chocolate truffle cake with a glossy mirror glaze.",
+    "image": "/uploads/1783187074946-Screenshot 2026-07-04 232902.png",
+    "featured": true
+  },
+  {
+    "id": 8,
+    "name": "Custom Birthday Cake",
+    "category": "Custom",
+    "price": 2000,
+    "description": "Personalized birthday cake with custom message and theme decoration.",
+    "image": "/uploads/1783187133028-Screenshot 2026-07-04 233017.png",
+    "featured": true
+  },
+  {
+    "id": 9,
+    "name": "cheese cake",
+    "category": "Custom",
+    "price": 1500,
+    "description": "cheese cake for special discount.",
+    "image": "/uploads/1783185595465-Screenshot 2026-07-04 230338.png",
+    "featured": true
+  }
+]

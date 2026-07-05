@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | JIVAN CAKE SHOP</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="brand">
+      <span style="font-family:'Playfair Display',serif;font-weight:800;letter-spacing:1px;">JIVAN</span>
+      <small style="text-transform:uppercase;letter-spacing:2px;font-size:0.7rem;">Cake Shop — Admin Panel</small>
+    </div>
+    <a href="#cakes" class="active" onclick="showSection('cakes')">🎂 Cakes</a>
+    <a href="#offer" onclick="showSection('offer')">🏷️ Offer</a>
+    <a href="#password" onclick="showSection('password')">🔑 Password</a>
+    <a href="/" target="_blank">🌐 View Site</a>
+    <a href="/admin/logout" style="color:var(--brown-300);">🚪 Logout</a>
+  </aside>
+
+  <main class="admin-main">
+    <!-- CAKES SECTION -->
+    <div id="section-cakes" class="section-content">
+      <h1>🎂 Manage Cakes</h1>
+
+      <div class="admin-card">
+        <h2>Add New Cake</h2>
+        <form class="admin-form" method="POST" action="/admin/cakes" enctype="multipart/form-data">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Cake Name</label>
+              <input type="text" id="name" name="name" required placeholder="e.g. Chocolate Dream">
+            </div>
+            <div class="form-group">
+              <label for="category">Category</label>
+              <select id="category" name="category" required>
+                <option value="Chocolate">Chocolate</option>
+                <option value="Vanilla">Vanilla</option>
+                <option value="Custom">Custom</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="price">Price (रू)</label>
+              <input type="number" id="price" name="price" required step="0.01" placeholder="1200">
+            </div>
+            <div class="form-group">
+              <label for="image">Image</label>
+              <input type="file" id="image" name="image" accept="image/*">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="2" placeholder="Describe the cake..."></textarea>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="featured" name="featured" checked>
+            <label for="featured">Show as Featured on Homepage</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Add Cake</button>
+        </form>
+      </div>
+
+      <div class="admin-card">
+        <h2>All Cakes (<%= cakes.length %>)</h2>
+        <% if (cakes.length === 0) { %>
+        <p style="color:#9ca3af;text-align:center;padding:32px;">No cakes yet. Add your first cake above!</p>
+        <% } else { %>
+        <div style="overflow-x:auto;">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Featured</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% cakes.forEach(cake => { %>
+              <tr>
+                <td>
+                  <% if (cake.image && cake.image !== '/images/placeholder.jpg') { %>
+                  <img src="<%= cake.image %>" alt="" class="thumb">
+                  <% } else { %>
+                  <div class="thumb" style="display:flex;align-items:center;justify-content:center;background:#EDE4DC;">🍰</div>
+                  <% } %>
+                </td>
+                <td><strong><%= cake.name %></strong></td>
+                <td><%= cake.category %></td>
+                <td>रू <%= cake.price.toLocaleString() %></td>
+                <td><%= cake.featured ? '⭐' : '—' %></td>
+                <td>
+                  <div class="actions">
+                    <button class="btn-sm edit" onclick='editCake(<%= JSON.stringify(cake) %>)'>Edit</button>
+                    <form method="POST" action="/admin/cakes/<%= cake.id %>/delete" style="display:inline;" onsubmit="return confirm('Delete <%= cake.name %>?')">
+                      <button type="submit" class="btn-sm delete">Delete</button>
+                    </form>
+                  </div>
+                </td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+    <!-- OFFER SECTION -->
+    <div id="section-offer" class="section-content" style="display:none;">
+      <h1>🏷️ Offer Banner</h1>
+      <div class="admin-card">
+        <form class="admin-form" method="POST" action="/admin/offer">
+          <div class="form-group">
+            <label for="offerText">Offer Text</label>
+            <input type="text" id="offerText" name="offerText" value="<%= offer.text %>" placeholder="e.g. 50g free on 1 pound cake">
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="active" name="active" <%= offer.active ? 'checked' : '' %>>
+            <label for="active">Show offer banner on website</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Update Offer</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- PASSWORD SECTION -->
+    <div id="section-password" class="section-content" style="display:none;">
+      <h1>🔑 Change Password</h1>
+      <div class="admin-card">
+        <form class="admin-form" method="POST" action="/admin/password">
+          <div class="form-group">
+            <label for="current">Current Password</label>
+            <input type="password" id="current" name="current" required>
+          </div>
+          <div class="form-group">
+            <label for="newpass">New Password</label>
+            <input type="password" id="newpass" name="newpass" required minlength="4">
+          </div>
+          <button type="submit" class="btn btn-primary">Change Password</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- EDIT MODAL -->
+<div class="modal-overlay" id="editModal">
+  <div class="modal">
+    <button class="close-btn" onclick="closeEditModal()">✕</button>
+    <h2>Edit Cake</h2>
+    <p style="color:#6b7280;margin-bottom:16px;">Update cake details below.</p>
+    <form class="admin-form" method="POST" action="/admin/cakes/0" enctype="multipart/form-data" id="editForm">
+      <input type="hidden" id="edit-id" name="id">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="edit-name">Cake Name</label>
+          <input type="text" id="edit-name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="edit-category">Category</label>
+          <select id="edit-category" name="category" required>
+            <option value="Chocolate">Chocolate</option>
+            <option value="Vanilla">Vanilla</option>
+            <option value="Custom">Custom</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="edit-price">Price (रू)</label>
+          <input type="number" id="edit-price" name="price" required step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="edit-image">Image (leave empty to keep current)</label>
+          <input type="file" id="edit-image" name="image" accept="image/*">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="edit-description">Description</label>
+        <textarea id="edit-description" name="description" rows="2"></textarea>
+      </div>
+      <div class="checkbox-group">
+        <input type="checkbox" id="edit-featured" name="featured">
+        <label for="edit-featured">Show as Featured</label>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <button type="button" class="btn-secondary" onclick="closeEditModal()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+function showSection(name) {
+  document.querySelectorAll('.section-content').forEach(el => el.style.display = 'none');
+  document.getElementById('section-' + name).style.display = 'block';
+  document.querySelectorAll('.admin-sidebar a').forEach(a => a.classList.remove('active'));
+  const link = document.querySelector(`.admin-sidebar a[href="#${name}"]`);
+  if (link) link.classList.add('active');
+}
+
+function editCake(cake) {
+  document.getElementById('edit-id').value = cake.id;
+  document.getElementById('edit-name').value = cake.name;
+  document.getElementById('edit-category').value = cake.category;
+  document.getElementById('edit-price').value = cake.price;
+  document.getElementById('edit-description').value = cake.description || '';
+  document.getElementById('edit-featured').checked = cake.featured || false;
+  document.getElementById('editForm').action = '/admin/cakes/' + cake.id;
+  document.getElementById('editModal').classList.add('open');
+}
+
+function closeEditModal() {
+  document.getElementById('editModal').classList.remove('open');
+}
+
+// Show first section by default
+showSection('cakes');
+</script>
+</body>
+</html>

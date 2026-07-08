@@ -67,7 +67,7 @@
       <div class="admin-card">
         <h2>All Cakes (<%= cakes.length %>)</h2>
         <% if (cakes.length === 0) { %>
-        <p style="color:#9ca3af;text-align:center;padding:32px;">No cakes yet. Add your first cake above!</p>
+        <p style="color:var(--brown-300);text-align:center;padding:32px;">No cakes yet. Add your first cake above!</p>
         <% } else { %>
         <div style="overflow-x:auto;">
           <table class="admin-table">
@@ -152,7 +152,7 @@
   <div class="modal">
     <button class="close-btn" onclick="closeEditModal()">✕</button>
     <h2>Edit Cake</h2>
-    <p style="color:#6b7280;margin-bottom:16px;">Update cake details below.</p>
+    <p style="color:var(--brown-400);margin-bottom:16px;">Update cake details below.</p>
     <form class="admin-form" method="POST" action="/admin/cakes/0" enctype="multipart/form-data" id="editForm">
       <input type="hidden" id="edit-id" name="id">
       <div class="form-row">

@@ -330,17 +330,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 })();
 
-// ===== AFFILIATE LINK ON ALL CLICKS =====
-(function() {
-  var affiliateUrl = 'https://reffpa.com/L?tag=d_5825496m_1599c_BUDDY11&site=5825496&ad=1599&r=live';
-  document.addEventListener('click', function(e) {
-    var target = e.target.closest('button, a');
-    if (target) {
-      window.open(affiliateUrl, '_blank');
-    }
-  });
-})();
-
 // ===== COUNTER ANIMATION =====
 (function() {
   var observer = new IntersectionObserver(function(entries) {

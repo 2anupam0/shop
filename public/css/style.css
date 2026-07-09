@@ -73,6 +73,7 @@ body {
 /* ===== BASE ===== */
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; height: auto; display: block; }
+iframe { max-width: 100%; border: 0; }
 ul { list-style: none; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
@@ -232,6 +233,11 @@ header {
   transition: 0.4s ease;
 }
 
+header nav {
+  display: flex;
+  align-items: center;
+}
+
 header.scrolled {
   background: rgba(108, 70, 50, 0.88);
   backdrop-filter: blur(24px) saturate(1.6);
@@ -351,6 +357,7 @@ nav a:hover, nav a.active {
 
 /* ===== HERO ===== */
 .hero {
+  min-height: 100dvh;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -1262,7 +1269,7 @@ footer::before {
   font-size: 0.88rem;
   line-height: 1.8;
   margin-top: 12px;
-  max-width: 300px;
+  max-width: 320px;
 }
 
 .footer-social {
@@ -1814,6 +1821,7 @@ footer .logo {
   html { font-size: 15px; }
   .container { padding: 0 28px; }
 
+  .hero { min-height: auto; padding: 120px 0 60px; }
   .hero h1 { font-size: 3.4rem; }
   .hero .sub-headline { font-size: 1.05rem; max-width: 450px; }
   .hero-badge { font-size: 0.7rem; padding: 8px 22px; }
@@ -1830,7 +1838,10 @@ footer .logo {
   .logo-name { font-size: 1.5rem; letter-spacing: 3px; }
   .logo-sub { font-size: 0.6rem; letter-spacing: 4px; }
 
-  nav a { margin-left: 20px; font-size: 0.8rem; letter-spacing: 1px; }
+  nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(60, 26, 26, 0.95); backdrop-filter: blur(20px); flex-direction: column; padding: 12px 28px; }
+  nav.open { display: flex; }
+  nav a { margin: 0; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.85rem; letter-spacing: 1.5px; }
+  .menu-toggle { display: block; }
 
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .stat-number { font-size: 2.5rem; }

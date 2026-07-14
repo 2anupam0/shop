@@ -184,21 +184,26 @@
 })();
 
 // ===== ORDER MODAL =====
-function openOrderModal(cakeName) {
+function openOrderModal(cakeName, cakeImage) {
+  var origin = window.location.origin;
+  var imgUrl = cakeImage ? origin + cakeImage : '';
   var overlay = document.createElement('div');
   overlay.className = 'modal-overlay open';
   overlay.id = 'orderModal';
+  var waText = 'Hi ANUP Cake Shop! I want to order' + (cakeName ? ' ' + cakeName : ' a cake') + '.';
+  if (imgUrl) waText += '%0A%0A📸 Photo: ' + encodeURIComponent(imgUrl);
   overlay.innerHTML = [
     '<div class="modal">',
     '<button class="close-btn" onclick="closeOrderModal()">✕</button>',
     '<h2>Order Cake</h2>',
     '<p style="color:#6b7280;margin-bottom:16px;">' + (cakeName ? 'Ordering: <strong>' + cakeName + '</strong>' : 'Tell us what you\'d like!') + '</p>',
-    '<a href="https://wa.me/9779865253798?text=' + encodeURIComponent('Hi ANUP Cake Shop! I want to order' + (cakeName ? ' ' + cakeName : ' a cake') + '.') + '" target="_blank" class="btn btn-whatsapp" style="width:100%;text-align:center;justify-content:center;margin-bottom:12px;">',
+    '<a href="https://wa.me/9779865253798?text=' + waText + '" target="_blank" class="btn btn-whatsapp" style="width:100%;text-align:center;justify-content:center;margin-bottom:12px;">',
     'Order via WhatsApp',
     '</a>',
     '<div class="or-divider">— or —</div>',
     '<form id="orderForm" onsubmit="submitOrder(event)">',
     '<input type="hidden" name="cakeName" value="' + (cakeName || '') + '">',
+    '<input type="hidden" name="cakeImage" value="' + (imgUrl || '') + '">',
     '<div class="form-group"><label for="orderName">Your Name</label><input type="text" id="orderName" name="name" required placeholder="Enter your name"></div>',
     '<div class="form-group"><label for="orderPhone">Phone Number</label><input type="tel" id="orderPhone" name="phone" required placeholder="98XXXXXXXX"></div>',
     '<div class="form-group"><label for="orderMessage">Order Details</label><textarea id="orderMessage" name="message" rows="3" required placeholder="Cake type, weight, delivery date..."></textarea></div>',
@@ -228,7 +233,9 @@ function submitOrder(e) {
   var phone = data.get('phone');
   var message = data.get('message');
   var cake = data.get('cakeName');
+  var cakeImage = data.get('cakeImage') || '';
   var text = 'Hi ANUP Cake Shop!%0A%0AName: ' + encodeURIComponent(name) + '%0APhone: ' + phone + '%0A' + (cake ? 'Cake: ' + encodeURIComponent(cake) + '%0A' : '') + 'Order: ' + encodeURIComponent(message);
+  if (cakeImage) text += '%0A%0A📸 Cake Photo: ' + encodeURIComponent(cakeImage);
   window.open('https://wa.me/9779865253798?text=' + text, '_blank');
   showToast('Order sent! Check WhatsApp', 'success');
   closeOrderModal();

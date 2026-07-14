@@ -67,17 +67,20 @@ function isAdmin(req, res, next) {
 app.get('/', (req, res) => {
   const cakes = readJSON('cakes.json');
   const offer = readJSON('offers.json');
-  res.render('index', { cakes: cakes.filter(c => c.featured), offer });
+  const baseUrl = req.protocol + '://' + req.get('host');
+  res.render('index', { cakes: cakes.filter(c => c.featured), offer, baseUrl });
 });
 
 app.get('/menu', (req, res) => {
   const cakes = readJSON('cakes.json');
   const cats = [...new Set(cakes.map(c => c.category))];
-  res.render('menu', { cakes, categories: cats });
+  const baseUrl = req.protocol + '://' + req.get('host');
+  res.render('menu', { cakes, categories: cats, baseUrl });
 });
 
 app.get('/contact', (req, res) => {
-  res.render('contact');
+  const baseUrl = req.protocol + '://' + req.get('host');
+  res.render('contact', { baseUrl });
 });
 
 app.get('/api/cakes', (req, res) => {

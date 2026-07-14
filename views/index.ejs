@@ -88,8 +88,8 @@
           </div>
           <p><%= cake.description %></p>
           <div class="card-actions">
-            <button class="btn btn-primary" onclick="openOrderModal('<%= cake.name %>')">Order</button>
-            <a href="https://wa.me/9779865253798?text=Hi%20ANUP Cake Shop!%20I%20want%20to%20order%20<%= encodeURIComponent(cake.name) %>" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+            <button class="btn btn-primary" onclick="openOrderModal('<%= cake.name %>','<%= cake.image || '' %>')">Order</button>
+            <a href="https://wa.me/9779865253798?text=Hi%20ANUP%20Cake%20Shop!%20I%20want%20to%20order%20<%= encodeURIComponent(cake.name) %>%0A%0A📸%20Photo:%20<%= encodeURIComponent(cake.image ? baseUrl + cake.image : '') %>" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
           </div>
         </div>
       </div>

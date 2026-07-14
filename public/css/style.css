@@ -1869,6 +1869,9 @@ footer .logo-img {
   .logo-img { height: 104px; }
   header.scrolled .logo-img { height: 80px; }
   nav a { margin-left: 38px; font-size: 0.95rem; }
+  .offer-premium { padding: 100px 0; }
+  .offer-premium-title { font-size: 3rem; }
+  .offer-premium-desc { font-size: 1.15rem; max-width: 600px; }
 }
 
 /* === DESKTOP (1200px-1399px) === */
@@ -1876,6 +1879,8 @@ footer .logo-img {
   .container { max-width: 1200px; }
   .hero h1 { font-size: 5rem; }
   .cake-grid { grid-template-columns: repeat(3, 1fr); }
+  .offer-premium { padding: 90px 0; }
+  .offer-premium-title { font-size: 2.8rem; }
 }
 
 /* === SMALL DESKTOP / LAPTOP (992px-1199px) === */
@@ -1885,6 +1890,8 @@ footer .logo-img {
   .stats-grid { gap: 20px; }
   .stat-number { font-size: 2.6rem; }
   .footer-grid { gap: 35px; }
+  .offer-premium { padding: 80px 0; }
+  .offer-premium-title { font-size: 2.4rem; }
 }
 
 /* === TABLET (768px-991px) === */
@@ -1922,6 +1929,11 @@ footer .logo-img {
 
   header .container { padding: 8px 28px; }
   header.scrolled .container { padding: 6px 28px; }
+
+  .offer-premium { padding: 60px 0; }
+  .offer-premium-title { font-size: 2rem; }
+  .offer-premium-desc { font-size: 1rem; max-width: 440px; }
+  .offer-premium-icons { font-size: 1.3rem; letter-spacing: 10px; }
 }
 
 /* === MOBILE (576px-767px) === */
@@ -1999,6 +2011,13 @@ footer .logo-img {
 
   .btn { padding: 12px 28px; font-size: 0.85rem; }
   .back-to-top { width: 42px; height: 42px; font-size: 1.1rem; bottom: 20px; right: 20px; }
+
+  .offer-premium { padding: 50px 0; }
+  .offer-premium-title { font-size: 1.7rem; }
+  .offer-premium-desc { font-size: 0.95rem; max-width: 100%; padding: 0 10px; }
+  .offer-premium-icons { font-size: 1.1rem; letter-spacing: 8px; }
+  .offer-premium-actions { flex-direction: column; align-items: center; }
+  .btn-offer-primary, .btn-offer-secondary { width: 100%; max-width: 320px; justify-content: center; padding: 14px 30px; font-size: 0.9rem; }
 }
 
 /* === SMALL PHONE (400px-575px) === */
@@ -2040,6 +2059,13 @@ footer .logo-img {
 
   header .container { padding: 6px 16px; }
   header.scrolled .container { padding: 5px 16px; }
+
+  .offer-premium { padding: 40px 0; }
+  .offer-premium-title { font-size: 1.4rem; }
+  .offer-premium-desc { font-size: 0.9rem; }
+  .offer-premium-icons { font-size: 1rem; letter-spacing: 6px; }
+  .offer-premium-pill { font-size: 1rem; padding: 3px 14px; }
+  .btn-offer-primary, .btn-offer-secondary { padding: 12px 26px; font-size: 0.85rem; max-width: 260px; }
 }
 
 /* === VERY SMALL PHONE (<400px) === */
@@ -2087,4 +2113,12 @@ footer .logo-img {
 
   header .container { padding: 5px 12px; }
   header.scrolled .container { padding: 4px 12px; }
+
+  .offer-premium { padding: 30px 0; }
+  .offer-premium-title { font-size: 1.2rem; }
+  .offer-premium-desc { font-size: 0.85rem; padding: 0 5px; }
+  .offer-premium-icons { font-size: 0.9rem; letter-spacing: 5px; }
+  .offer-premium-pill { font-size: 0.9rem; padding: 2px 12px; }
+  .offer-premium-actions { flex-direction: column; align-items: center; gap: 12px; }
+  .btn-offer-primary, .btn-offer-secondary { width: 100%; max-width: 220px; padding: 11px 22px; font-size: 0.8rem; justify-content: center; }
 }

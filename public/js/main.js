@@ -84,11 +84,11 @@
 (function() {
   var loader = document.createElement('div');
   loader.className = 'page-loader';
-  loader.innerHTML = '<div class="loader-content"><div class="loader-icon">🎂</div><div class="loader-text">ANUP</div><div class="loader-sub">Cake Shop</div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>';
+  loader.innerHTML = '<div class="loader-content"><img src="/images/logo.png" alt="" class="logo-img"><div class="loader-text">ANUP</div><div class="loader-sub">Cake Shop</div><div class="loader-divider"></div></div>';
   document.body.prepend(loader);
   window.addEventListener('load', function() {
-    setTimeout(function() { loader.classList.add('hide'); }, 600);
-    setTimeout(function() { loader.remove(); }, 1600);
+    setTimeout(function() { loader.classList.add('hide'); }, 800);
+    setTimeout(function() { loader.remove(); }, 1800);
   });
 })();
 

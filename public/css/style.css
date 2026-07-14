@@ -266,7 +266,7 @@ header.scrolled .container {
 }
 
 .logo-img {
-  height: 48px;
+  height: 70px;
   width: auto;
   display: block;
   transition: opacity 0.3s;
@@ -1329,7 +1329,7 @@ footer ul li a:hover {
 }
 
 footer .logo-img {
-  height: 44px;
+  height: 60px;
 }
 
 /* ===== ADMIN LOGIN ===== */
@@ -1750,7 +1750,7 @@ footer .logo-img {
   .contact-grid { gap: 80px; }
   header .container { padding: 22px 40px; }
   header.scrolled .container { padding: 14px 40px; }
-  .logo-img { height: 56px; }
+  .logo-img { height: 80px; }
   nav a { margin-left: 38px; font-size: 0.95rem; }
 }
 
@@ -1788,7 +1788,7 @@ footer .logo-img {
   .section { padding: 70px 0; }
 
   .cake-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .logo-img { height: 42px; }
+  .logo-img { height: 60px; }
 
   nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(60, 26, 26, 0.95); backdrop-filter: blur(20px); flex-direction: column; padding: 12px 28px; }
   nav.open { display: flex; }
@@ -1829,7 +1829,7 @@ footer .logo-img {
 
   .cake-grid { grid-template-columns: 1fr; gap: 20px; max-width: 400px; margin: 0 auto; }
   .cake-card .img-wrap { height: 200px; }
-  .logo-img { height: 38px; }
+  .logo-img { height: 55px; }
 
   nav {
     display: none;
@@ -1897,7 +1897,7 @@ footer .logo-img {
   .section-subtitle { font-size: 0.85rem; }
   .section { padding: 40px 0; }
 
-  .logo-img { height: 36px; }
+  .logo-img { height: 50px; }
 
   .cake-grid { gap: 16px; }
   .cake-card .img-wrap { height: 180px; }
@@ -1937,7 +1937,7 @@ footer .logo-img {
   .section-subtitle { font-size: 0.8rem; }
   .section { padding: 30px 0; }
 
-  .logo-img { height: 32px; }
+  .logo-img { height: 44px; }
 
   .cake-grid { gap: 14px; }
   .cake-card .img-wrap { height: 160px; }

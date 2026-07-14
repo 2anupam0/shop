@@ -234,12 +234,12 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 24px;
+  padding: 10px 24px;
   transition: 0.3s;
 }
 
 header.scrolled .container {
-  padding: 12px 24px;
+  padding: 8px 24px;
 }
 
 .logo {
@@ -250,7 +250,7 @@ header.scrolled .container {
 }
 
 .logo-img {
-  height: 105px;
+  height: 70px;
   width: auto;
   display: block;
   transition: height 0.4s ease, opacity 0.3s;
@@ -261,7 +261,7 @@ header.scrolled .container {
 }
 
 header.scrolled .logo-img {
-  height: 70px;
+  height: 50px;
   filter: brightness(0) invert(1) opacity(0.85);
 }
 
@@ -1733,10 +1733,10 @@ footer .logo-img {
   .stat-number { font-size: 3.5rem; }
   .footer-grid { gap: 60px; }
   .contact-grid { gap: 80px; }
-  header .container { padding: 22px 40px; }
-  header.scrolled .container { padding: 14px 40px; }
-  .logo-img { height: 120px; }
-  header.scrolled .logo-img { height: 80px; }
+  header .container { padding: 14px 40px; }
+  header.scrolled .container { padding: 10px 40px; }
+  .logo-img { height: 80px; }
+  header.scrolled .logo-img { height: 56px; }
   nav a { margin-left: 38px; font-size: 0.95rem; }
 }
 
@@ -1774,8 +1774,8 @@ footer .logo-img {
   .section { padding: 70px 0; }
 
   .cake-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .logo-img { height: 90px; }
-  header.scrolled .logo-img { height: 60px; }
+  .logo-img { height: 56px; }
+  header.scrolled .logo-img { height: 40px; }
 
   nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(60, 26, 26, 0.95); backdrop-filter: blur(20px); flex-direction: column; padding: 12px 28px; }
   nav.open { display: flex; }
@@ -1789,8 +1789,8 @@ footer .logo-img {
 
   .contact-grid { gap: 40px; }
 
-  header .container { padding: 16px 28px; }
-  header.scrolled .container { padding: 10px 28px; }
+  header .container { padding: 10px 28px; }
+  header.scrolled .container { padding: 8px 28px; }
 }
 
 /* === MOBILE (576px-767px) === */
@@ -1816,8 +1816,8 @@ footer .logo-img {
 
   .cake-grid { grid-template-columns: 1fr; gap: 20px; max-width: 400px; margin: 0 auto; }
   .cake-card .img-wrap { height: 200px; }
-  .logo-img { height: 82px; }
-  header.scrolled .logo-img { height: 55px; }
+  .logo-img { height: 50px; }
+  header.scrolled .logo-img { height: 36px; }
 
   nav {
     display: none;
@@ -1839,8 +1839,8 @@ footer .logo-img {
   }
   .menu-toggle { display: block; cursor: pointer; }
 
-  header .container { padding: 14px 20px; }
-  header.scrolled .container { padding: 10px 20px; }
+  header .container { padding: 8px 20px; }
+  header.scrolled .container { padding: 6px 20px; }
 
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .stat-number { font-size: 2rem; }
@@ -1885,8 +1885,8 @@ footer .logo-img {
   .section-subtitle { font-size: 0.85rem; }
   .section { padding: 40px 0; }
 
-  .logo-img { height: 75px; }
-  header.scrolled .logo-img { height: 50px; }
+  .logo-img { height: 44px; }
+  header.scrolled .logo-img { height: 32px; }
 
   .cake-grid { gap: 16px; }
   .cake-card .img-wrap { height: 180px; }
@@ -1907,8 +1907,8 @@ footer .logo-img {
 
   .section-decoration { font-size: 0.8rem; letter-spacing: 3px; }
 
-  header .container { padding: 12px 16px; }
-  header.scrolled .container { padding: 8px 16px; }
+  header .container { padding: 8px 16px; }
+  header.scrolled .container { padding: 6px 16px; }
 }
 
 /* === VERY SMALL PHONE (<400px) === */
@@ -1926,8 +1926,8 @@ footer .logo-img {
   .section-subtitle { font-size: 0.8rem; }
   .section { padding: 30px 0; }
 
-  .logo-img { height: 66px; }
-  header.scrolled .logo-img { height: 44px; }
+  .logo-img { height: 38px; }
+  header.scrolled .logo-img { height: 28px; }
 
   .cake-grid { gap: 14px; }
   .cake-card .img-wrap { height: 160px; }
@@ -1954,6 +1954,6 @@ footer .logo-img {
   .admin-main { padding: 10px; }
   .admin-card { padding: 14px; }
 
-  header .container { padding: 10px 12px; }
-  header.scrolled .container { padding: 8px 12px; }
+  header .container { padding: 6px 12px; }
+  header.scrolled .container { padding: 5px 12px; }
 }

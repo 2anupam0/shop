@@ -197,7 +197,7 @@ function openOrderModal(cakeName, cakeImage) {
     '<button class="close-btn" onclick="closeOrderModal()">✕</button>',
     '<h2>Order Cake</h2>',
     '<p style="color:#6b7280;margin-bottom:16px;">' + (cakeName ? 'Ordering: <strong>' + cakeName + '</strong>' : 'Tell us what you\'d like!') + '</p>',
-    '<a href="https://wa.me/9779855060939?text=' + waText + '" target="_blank" class="btn btn-whatsapp" style="width:100%;text-align:center;justify-content:center;margin-bottom:12px;">',
+    '<a href="https://wa.me/9779763624678?text=' + waText + '" target="_blank" class="btn btn-whatsapp" style="width:100%;text-align:center;justify-content:center;margin-bottom:12px;">',
     'Order via WhatsApp',
     '</a>',
     '<div class="or-divider">— or —</div>',
@@ -236,7 +236,7 @@ function submitOrder(e) {
   var cakeImage = data.get('cakeImage') || '';
   var text = 'Hi ANUP Cake Shop!%0A%0AName: ' + encodeURIComponent(name) + '%0APhone: ' + phone + '%0A' + (cake ? 'Cake: ' + encodeURIComponent(cake) + '%0A' : '') + 'Order: ' + encodeURIComponent(message);
   if (cakeImage) text += '%0A%0A📸 Cake Photo: ' + encodeURIComponent(cakeImage);
-  window.open('https://wa.me/9779855060939?text=' + text, '_blank');
+  window.open('https://wa.me/9779763624678?text=' + text, '_blank');
   showToast('Order sent! Check WhatsApp', 'success');
   closeOrderModal();
 }
@@ -309,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (typeof confettiBurst === 'function') confettiBurst(40);
       var data = new FormData(this);
       var text = 'Hi ANUP Cake Shop!%0AName: ' + encodeURIComponent(data.get('name')) + '%0APhone: ' + data.get('phone') + '%0AMessage: ' + encodeURIComponent(data.get('message'));
-      window.open('https://wa.me/9779855060939?text=' + text, '_blank');
+      window.open('https://wa.me/9779763624678?text=' + text, '_blank');
       showToast('Message sent! Check WhatsApp', 'success');
       this.reset();
     });

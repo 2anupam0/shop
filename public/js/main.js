@@ -84,7 +84,7 @@
 (function() {
   var loader = document.createElement('div');
   loader.className = 'page-loader';
-  loader.innerHTML = '<div class="loader-content"><img src="/images/logo.png" alt="" class="logo-img"><div class="loader-text">ANUP</div><div class="loader-sub">Cake Shop</div><div class="loader-divider"></div></div>';
+  loader.innerHTML = '<div class="loader-content"><img src="/images/logo.png" alt="" class="logo-img"><div class="loader-text">ANUP</div><div class="loader-sub">Made with Love, Shared with Joy</div><div class="loader-divider"></div></div>';
   document.body.prepend(loader);
   window.addEventListener('load', function() {
     setTimeout(function() { loader.classList.add('hide'); }, 800);

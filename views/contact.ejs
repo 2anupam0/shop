@@ -24,7 +24,7 @@
           </div>
         </div>
 
-        <div style="display:flex;gap:16px;margin-top:28px;flex-wrap:wrap;">
+        <div class="contact-social-wrap">
           <a href="https://facebook.com" target="_blank" class="contact-social-link" style="background:#1877F2;">
             <span style="font-size:1.3rem;">f</span>
             <span>Facebook</span>
@@ -39,18 +39,18 @@
           </a>
         </div>
 
-        <div class="reveal reveal-delay-2" style="margin-top:32px;padding:28px;background:linear-gradient(135deg,var(--cream-200),var(--brown-50));border-radius:16px;border:1px solid var(--brown-100);">
-          <h4 style="margin-bottom:8px;color:var(--brown-700);font-size:1.15rem;font-family:'Playfair Display',serif;">Order & Save</h4>
-          <p style="color:var(--brown-400);font-size:0.95rem;">Get <strong style="color:var(--brown-500);">50g free</strong> on every 1 pound cake. Order now!</p>
-          <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
-            <button class="btn btn-whatsapp" onclick="openOrderModal()">📱 Order Online</button>
-            <a href="https://wa.me/9779763624678?text=Hi%20ANUP%20Cake%20Shop!" target="_blank" class="btn btn-whatsapp">📱 WhatsApp Us</a>
+        <div class="contact-offer-card reveal reveal-delay-2">
+          <h4>Order & Save</h4>
+          <p>Get <strong>50g free</strong> on every 1 pound cake. Order now!</p>
+          <div class="contact-offer-actions">
+            <button class="btn-offer-secondary" onclick="openOrderModal()">📱 Order Online</button>
+            <a href="https://wa.me/9779763624678?text=Hi%20ANUP%20Cake%20Shop!" target="_blank" class="btn-offer-secondary">📱 WhatsApp Us</a>
           </div>
         </div>
       </div>
 
       <div class="contact-form reveal reveal-delay-3">
-        <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:20px;color:var(--brown-700);">Send a Message</h3>
+        <h3 class="contact-form-title">Send a Message</h3>
         <form id="contactForm">
           <div class="form-group">
             <label for="name">Your Name</label>
@@ -74,7 +74,7 @@
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="4" required placeholder="Tell us about your order..."></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="width:100%">Send Message</button>
+          <button type="submit" class="btn-contact-submit">Send Message</button>
         </form>
       </div>
     </div>

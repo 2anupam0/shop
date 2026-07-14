@@ -246,14 +246,6 @@ header.scrolled {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-header.scrolled .logo-name {
-  color: rgba(255,255,255,0.75);
-}
-
-header.scrolled .logo-sub {
-  color: rgba(255,255,255,0.45);
-}
-
 header .container {
   display: flex;
   align-items: center;
@@ -273,43 +265,19 @@ header.scrolled .container {
   position: relative;
 }
 
-.logo-icon {
-  font-size: 2rem;
-  line-height: 1;
-  animation: logoFloat 3s ease-in-out infinite;
+.logo-img {
+  height: 48px;
+  width: auto;
+  display: block;
+  transition: opacity 0.3s;
 }
 
-@keyframes logoFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px) rotate(3deg); }
+.logo-img:hover {
+  opacity: 0.85;
 }
 
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-}
-
-.logo-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.9rem;
-  font-weight: 800;
-  letter-spacing: 4px;
-  color: rgba(107, 58, 42, 0.55);
-  text-shadow: none;
-}
-
-.logo-sub {
-  font-size: 0.7rem;
-  font-weight: 400;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: rgba(107, 58, 42, 0.35);
-  margin-top: 2px;
-}
-
-.logo:hover .logo-name {
-  opacity: 0.9;
+header.scrolled .logo-img {
+  filter: brightness(0) invert(1) opacity(0.85);
 }
 
 nav a {
@@ -1360,22 +1328,8 @@ footer ul li a:hover {
   gap: 4px;
 }
 
-footer .logo .logo-name {
-  font-size: 1.3rem;
-  letter-spacing: 3px;
-}
-
-footer .logo .logo-sub {
-  font-size: 0.6rem;
-  letter-spacing: 4px;
-}
-
-footer .logo .logo-icon {
-  font-size: 1.4rem;
-}
-
-footer .logo {
-  gap: 10px;
+footer .logo-img {
+  height: 44px;
 }
 
 /* ===== ADMIN LOGIN ===== */
@@ -1796,7 +1750,7 @@ footer .logo {
   .contact-grid { gap: 80px; }
   header .container { padding: 22px 40px; }
   header.scrolled .container { padding: 14px 40px; }
-  .logo-name { font-size: 2.2rem; letter-spacing: 5px; }
+  .logo-img { height: 56px; }
   nav a { margin-left: 38px; font-size: 0.95rem; }
 }
 
@@ -1834,9 +1788,7 @@ footer .logo {
   .section { padding: 70px 0; }
 
   .cake-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-
-  .logo-name { font-size: 1.5rem; letter-spacing: 3px; }
-  .logo-sub { font-size: 0.6rem; letter-spacing: 4px; }
+  .logo-img { height: 42px; }
 
   nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(60, 26, 26, 0.95); backdrop-filter: blur(20px); flex-direction: column; padding: 12px 28px; }
   nav.open { display: flex; }
@@ -1877,10 +1829,7 @@ footer .logo {
 
   .cake-grid { grid-template-columns: 1fr; gap: 20px; max-width: 400px; margin: 0 auto; }
   .cake-card .img-wrap { height: 200px; }
-
-  .logo-name { font-size: 1.3rem; letter-spacing: 3px; }
-  .logo-sub { font-size: 0.55rem; letter-spacing: 4px; }
-  .logo-icon { font-size: 1.4rem; }
+  .logo-img { height: 38px; }
 
   nav {
     display: none;
@@ -1948,10 +1897,7 @@ footer .logo {
   .section-subtitle { font-size: 0.85rem; }
   .section { padding: 40px 0; }
 
-  .logo-name { font-size: 1.1rem; letter-spacing: 2px; }
-  .logo-sub { font-size: 0.5rem; letter-spacing: 3px; }
-  .logo-icon { font-size: 1.2rem; }
-  .logo { gap: 8px; }
+  .logo-img { height: 36px; }
 
   .cake-grid { gap: 16px; }
   .cake-card .img-wrap { height: 180px; }
@@ -1991,9 +1937,7 @@ footer .logo {
   .section-subtitle { font-size: 0.8rem; }
   .section { padding: 30px 0; }
 
-  .logo-name { font-size: 1rem; letter-spacing: 2px; }
-  .logo-sub { font-size: 0.45rem; letter-spacing: 3px; }
-  .logo-icon { font-size: 1.1rem; }
+  .logo-img { height: 32px; }
 
   .cake-grid { gap: 14px; }
   .cake-card .img-wrap { height: 160px; }

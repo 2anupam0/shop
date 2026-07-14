@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard | ANUP CAKE SHOP</title>
+  <title>Dashboard | ANUPAMA CAKE SHOP</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+<div class="admin-sidebar-overlay"></div>
 <div class="admin-layout">
   <aside class="admin-sidebar">
     <div class="brand">
-      <span style="font-family:'Playfair Display',serif;font-weight:800;letter-spacing:1px;">ANUP</span>
+      <span style="font-family:'Playfair Display',serif;font-weight:800;letter-spacing:1px;">ANUPAMA</span>
       <small style="text-transform:uppercase;letter-spacing:2px;font-size:0.7rem;">Cake Shop — Admin Panel</small>
       <button class="admin-toggle">≡</button>
     </div>
@@ -224,17 +225,33 @@ function closeEditModal() {
 
 document.addEventListener('DOMContentLoaded', function() {
   var toggle = document.querySelector('.admin-toggle');
-  var nav = document.querySelector('.admin-nav');
-  if (toggle && nav) {
+  var sidebar = document.querySelector('.admin-sidebar');
+  var overlay = document.querySelector('.admin-sidebar-overlay');
+  function openSidebar() {
+    sidebar.classList.add('open');
+    overlay.classList.add('show');
+    toggle.textContent = '✕';
+  }
+  function closeSidebar() {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('show');
+    toggle.textContent = '☰';
+  }
+  if (toggle && sidebar) {
     toggle.addEventListener('click', function() {
-      nav.classList.toggle('open');
-      toggle.textContent = nav.classList.contains('open') ? '✕' : '≡';
+      if (sidebar.classList.contains('open')) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
     });
-    nav.querySelectorAll('a').forEach(function(a) {
+    if (overlay) {
+      overlay.addEventListener('click', closeSidebar);
+    }
+    sidebar.querySelectorAll('a').forEach(function(a) {
       a.addEventListener('click', function() {
         if (window.innerWidth < 768) {
-          nav.classList.remove('open');
-          toggle.textContent = '≡';
+          closeSidebar();
         }
       });
     });

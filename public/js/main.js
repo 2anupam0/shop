@@ -190,7 +190,7 @@ function openOrderModal(cakeName, cakeImage) {
   var overlay = document.createElement('div');
   overlay.className = 'modal-overlay open';
   overlay.id = 'orderModal';
-  var waText = 'Hi ANUP Cake Shop! I want to order' + (cakeName ? ' ' + cakeName : ' a cake') + '.';
+  var waText = 'Hi ANUPAMA Cake Shop! I want to order' + (cakeName ? ' ' + cakeName : ' a cake') + '.';
   if (imgUrl) waText += '%0A%0A📸 Photo: ' + encodeURIComponent(imgUrl);
   overlay.innerHTML = [
     '<div class="modal">',
@@ -234,7 +234,7 @@ function submitOrder(e) {
   var message = data.get('message');
   var cake = data.get('cakeName');
   var cakeImage = data.get('cakeImage') || '';
-  var text = 'Hi ANUP Cake Shop!%0A%0AName: ' + encodeURIComponent(name) + '%0APhone: ' + phone + '%0A' + (cake ? 'Cake: ' + encodeURIComponent(cake) + '%0A' : '') + 'Order: ' + encodeURIComponent(message);
+  var text = 'Hi ANUPAMA Cake Shop!%0A%0AName: ' + encodeURIComponent(name) + '%0APhone: ' + phone + '%0A' + (cake ? 'Cake: ' + encodeURIComponent(cake) + '%0A' : '') + 'Order: ' + encodeURIComponent(message);
   if (cakeImage) text += '%0A%0A📸 Cake Photo: ' + encodeURIComponent(cakeImage);
   window.open('https://wa.me/9779763624678?text=' + text, '_blank');
   showToast('Order sent! Check WhatsApp', 'success');
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       if (typeof confettiBurst === 'function') confettiBurst(40);
       var data = new FormData(this);
-      var text = 'Hi ANUP Cake Shop!%0AName: ' + encodeURIComponent(data.get('name')) + '%0APhone: ' + data.get('phone') + '%0AMessage: ' + encodeURIComponent(data.get('message'));
+      var text = 'Hi ANUPAMA Cake Shop!%0AName: ' + encodeURIComponent(data.get('name')) + '%0APhone: ' + data.get('phone') + '%0AMessage: ' + encodeURIComponent(data.get('message'));
       window.open('https://wa.me/9779763624678?text=' + text, '_blank');
       showToast('Message sent! Check WhatsApp', 'success');
       this.reset();

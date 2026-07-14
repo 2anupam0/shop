@@ -177,5 +177,5 @@ app.post('/admin/password', isAdmin, async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`ANUP CAKE SHOP running at http://localhost:${PORT}`);
+  console.log(`ANUPAMA CAKE SHOP running at http://localhost:${PORT}`);
 });

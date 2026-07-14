@@ -198,7 +198,7 @@ function openOrderModal(cakeName, cakeImage) {
     '<h2>Order Cake</h2>',
     '<p style="color:#6b7280;margin-bottom:16px;">' + (cakeName ? 'Ordering: <strong>' + cakeName + '</strong>' : 'Tell us what you\'d like!') + '</p>',
     '<a href="https://wa.me/9779763624678?text=' + waText + '" target="_blank" class="btn btn-whatsapp" style="width:100%;text-align:center;justify-content:center;margin-bottom:12px;">',
-    'Order via WhatsApp',
+    '📱 Order via WhatsApp',
     '</a>',
     '<div class="or-divider">— or —</div>',
     '<form id="orderForm" onsubmit="submitOrder(event)">',

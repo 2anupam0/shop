@@ -567,12 +567,13 @@ nav a:hover, nav a.active {
 
 .btn-whatsapp {
   background: #25D366;
-  color: white;
+  color: #fff !important;
   box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
+  border: none;
 }
 
 .btn-whatsapp:hover {
-  background: #1ebe5a;
+  background: #20BD5A;
   transform: translateY(-2px);
   box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
 }

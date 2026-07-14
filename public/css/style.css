@@ -234,12 +234,12 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 24px;
+  padding: 8px 24px;
   transition: 0.3s;
 }
 
 header.scrolled .container {
-  padding: 8px 24px;
+  padding: 6px 24px;
 }
 
 .logo {
@@ -1733,8 +1733,8 @@ footer .logo-img {
   .stat-number { font-size: 3.5rem; }
   .footer-grid { gap: 60px; }
   .contact-grid { gap: 80px; }
-  header .container { padding: 14px 40px; }
-  header.scrolled .container { padding: 10px 40px; }
+  header .container { padding: 11px 40px; }
+  header.scrolled .container { padding: 8px 40px; }
   .logo-img { height: 104px; }
   header.scrolled .logo-img { height: 80px; }
   nav a { margin-left: 38px; font-size: 0.95rem; }
@@ -1789,8 +1789,8 @@ footer .logo-img {
 
   .contact-grid { gap: 40px; }
 
-  header .container { padding: 10px 28px; }
-  header.scrolled .container { padding: 8px 28px; }
+  header .container { padding: 8px 28px; }
+  header.scrolled .container { padding: 6px 28px; }
 }
 
 /* === MOBILE (576px-767px) === */
@@ -1839,8 +1839,8 @@ footer .logo-img {
   }
   .menu-toggle { display: block; cursor: pointer; }
 
-  header .container { padding: 8px 20px; }
-  header.scrolled .container { padding: 6px 20px; }
+  header .container { padding: 6px 20px; }
+  header.scrolled .container { padding: 5px 20px; }
 
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .stat-number { font-size: 2rem; }
@@ -1907,8 +1907,8 @@ footer .logo-img {
 
   .section-decoration { font-size: 0.8rem; letter-spacing: 3px; }
 
-  header .container { padding: 8px 16px; }
-  header.scrolled .container { padding: 6px 16px; }
+  header .container { padding: 6px 16px; }
+  header.scrolled .container { padding: 5px 16px; }
 }
 
 /* === VERY SMALL PHONE (<400px) === */
@@ -1954,6 +1954,6 @@ footer .logo-img {
   .admin-main { padding: 10px; }
   .admin-card { padding: 14px; }
 
-  header .container { padding: 6px 12px; }
-  header.scrolled .container { padding: 5px 12px; }
+  header .container { padding: 5px 12px; }
+  header.scrolled .container { padding: 4px 12px; }
 }

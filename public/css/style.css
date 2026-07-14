@@ -1579,6 +1579,32 @@ footer .logo-img {
   padding: 0 24px 24px;
   border-bottom: 1px solid rgba(255,255,255,0.06);
   margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.admin-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 2px 8px;
+  border-radius: 6px;
+  line-height: 1;
+  transition: 0.2s;
+}
+
+.admin-toggle:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+}
+
+.admin-nav {
+  display: block;
 }
 
 .admin-sidebar .brand h3 {
@@ -2065,11 +2091,14 @@ footer .logo-img {
 
 
   .admin-layout { flex-direction: column; }
-  .admin-sidebar { width: 100%; padding: 8px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
-  .admin-sidebar .brand { width: 100%; padding: 10px 16px 8px; margin-bottom: 4px; display: flex; align-items: center; gap: 12px; }
+  .admin-sidebar { width: 100%; padding: 0; }
+  .admin-sidebar .brand { width: 100%; padding: 12px 16px; margin-bottom: 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
   .admin-sidebar .brand small { margin-top: 0; }
-  .admin-sidebar a { padding: 10px 16px; font-size: 0.82rem; border-left: none; border-bottom: 2px solid transparent; }
-  .admin-sidebar a:hover, .admin-sidebar a.active { border-left-color: transparent; border-bottom-color: var(--gold-400); }
+  .admin-toggle { display: block; }
+  .admin-nav { display: none; padding: 0; }
+  .admin-nav.open { display: block; }
+  .admin-nav a { padding: 10px 16px; font-size: 0.82rem; border-left: none; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .admin-nav a:hover, .admin-nav a.active { border-left-color: transparent; border-bottom-color: var(--gold-400); }
   .admin-main { padding: 16px; }
   .admin-card { padding: 20px; }
   .admin-form .form-row { grid-template-columns: 1fr; gap: 12px; }
@@ -2139,7 +2168,10 @@ footer .logo-img {
   .admin-table th { font-size: 0.65rem; padding: 8px 6px; letter-spacing: 0.5px; }
   .admin-table .actions { gap: 3px; }
   .btn-sm { padding: 4px 8px; font-size: 0.7rem; }
-  .admin-sidebar a { padding: 8px 12px; font-size: 0.78rem; }
+  .admin-toggle { display: block; }
+  .admin-nav { display: none; }
+  .admin-nav.open { display: block; }
+  .admin-nav a { padding: 8px 12px; font-size: 0.78rem; }
 
   .section-decoration { font-size: 0.8rem; letter-spacing: 3px; }
 
@@ -2201,7 +2233,10 @@ footer .logo-img {
   .admin-table td { padding: 8px 4px; font-size: 0.72rem; }
   .admin-table .thumb { width: 28px; height: 28px; border-radius: 6px; }
   .btn-sm { padding: 4px 6px; font-size: 0.65rem; }
-  .admin-sidebar a { padding: 6px 10px; font-size: 0.72rem; }
+  .admin-toggle { display: block; }
+  .admin-nav { display: none; }
+  .admin-nav.open { display: block; }
+  .admin-nav a { padding: 6px 10px; font-size: 0.72rem; }
 
   header .container { padding: 5px 12px; }
   header.scrolled .container { padding: 4px 12px; }

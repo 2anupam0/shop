@@ -12,12 +12,15 @@
     <div class="brand">
       <span style="font-family:'Playfair Display',serif;font-weight:800;letter-spacing:1px;">ANUP</span>
       <small style="text-transform:uppercase;letter-spacing:2px;font-size:0.7rem;">Cake Shop — Admin Panel</small>
+      <button class="admin-toggle">≡</button>
     </div>
-    <a href="#cakes" class="active" onclick="showSection('cakes')">🎂 Cakes</a>
-    <a href="#offer" onclick="showSection('offer')">🏷️ Offer</a>
-    <a href="#password" onclick="showSection('password')">🔑 Password</a>
-    <a href="/" target="_blank">🌐 View Site</a>
-    <a href="/admin/logout" style="color:var(--brown-300);">🚪 Logout</a>
+    <div class="admin-nav">
+      <a href="#cakes" class="active" onclick="showSection('cakes')">🎂 Cakes</a>
+      <a href="#offer" onclick="showSection('offer')">🏷️ Offer</a>
+      <a href="#password" onclick="showSection('password')">🔑 Password</a>
+      <a href="/" target="_blank">🌐 View Site</a>
+      <a href="/admin/logout" style="color:var(--brown-300);">🚪 Logout</a>
+    </div>
   </aside>
 
   <main class="admin-main">
@@ -199,8 +202,8 @@
 function showSection(name) {
   document.querySelectorAll('.section-content').forEach(el => el.style.display = 'none');
   document.getElementById('section-' + name).style.display = 'block';
-  document.querySelectorAll('.admin-sidebar a').forEach(a => a.classList.remove('active'));
-  const link = document.querySelector(`.admin-sidebar a[href="#${name}"]`);
+  document.querySelectorAll('.admin-nav a').forEach(a => a.classList.remove('active'));
+  const link = document.querySelector(`.admin-nav a[href="#${name}"]`);
   if (link) link.classList.add('active');
 }
 
@@ -218,6 +221,25 @@ function editCake(cake) {
 function closeEditModal() {
   document.getElementById('editModal').classList.remove('open');
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  var toggle = document.querySelector('.admin-toggle');
+  var nav = document.querySelector('.admin-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function() {
+      nav.classList.toggle('open');
+      toggle.textContent = nav.classList.contains('open') ? '✕' : '≡';
+    });
+    nav.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        if (window.innerWidth < 768) {
+          nav.classList.remove('open');
+          toggle.textContent = '≡';
+        }
+      });
+    });
+  }
+});
 
 // Show first section by default
 showSection('cakes');

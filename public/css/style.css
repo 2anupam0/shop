@@ -1561,6 +1561,119 @@ footer .logo-img {
   border: 1px solid rgba(220, 38, 38, 0.1);
 }
 
+/* === CAKE DETAIL VIEW (ADMIN) === */
+
+#cake-detail-view {
+  display: none;
+  width: 100%;
+}
+
+#cake-detail-view.visible {
+  display: block;
+  animation: fadeSlideIn 0.35s ease;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cake-detail-banner {
+  background: linear-gradient(135deg, #4D2E2E 0%, #6B3A2A 100%);
+  border-radius: 16px;
+  padding: 40px;
+  margin-bottom: 24px;
+  color: #fff;
+  text-align: center;
+}
+
+.cake-detail-banner .back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-bottom: 24px;
+}
+
+.cake-detail-banner .back-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.cake-detail-body {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cake-detail-body .detail-image {
+  flex-shrink: 0;
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  border: 3px solid rgba(255,255,255,0.15);
+}
+
+.cake-detail-body .detail-info {
+  text-align: left;
+  flex: 1;
+}
+
+.cake-detail-body .detail-info h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin: 0 0 8px;
+  color: #fff;
+}
+
+.cake-detail-body .detail-meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.cake-detail-body .detail-tag {
+  background: rgba(255,255,255,0.12);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.9);
+}
+
+.cake-detail-body .detail-price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #E6D2BA;
+  margin-bottom: 12px;
+}
+
+.cake-detail-body .detail-desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.8);
+}
+
+@media (max-width: 767px) {
+  .cake-detail-banner { padding: 24px 16px; }
+  .cake-detail-body { flex-direction: column; align-items: center; text-align: center; }
+  .cake-detail-body .detail-image { width: 200px; height: 200px; }
+  .cake-detail-body .detail-info { text-align: center; }
+  .cake-detail-body .detail-meta { justify-content: center; }
+  .cake-detail-body .detail-info h2 { font-size: 1.5rem; }
+  .cake-detail-body .detail-price { font-size: 1.3rem; }
+}
+
 /* ===== ADMIN DASHBOARD ===== */
 .admin-layout {
   display: flex;
@@ -1693,6 +1806,10 @@ footer .logo-img {
   vertical-align: middle;
   color: var(--brown-700);
 }
+
+.cake-row { cursor: pointer; transition: background 0.15s; }
+.cake-row:hover { background: var(--cream-100); }
+.cake-row .row-click { user-select: none; }
 
 .admin-table .thumb {
   width: 50px;

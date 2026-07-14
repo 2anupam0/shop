@@ -87,17 +87,17 @@
             </thead>
             <tbody>
               <% cakes.forEach(cake => { %>
-              <tr>
-                <td>
+              <tr class="cake-row" data-cake='<%- JSON.stringify(cake) %>'>
+                <td class="row-click">
                   <img src="<%= cake.image || '' %>" alt="" class="thumb" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-fallback').style.display='flex'">
                   <div class="thumb-fallback" style="display:none;width:50px;height:50px;border-radius:10px;background:#EDE4DC;align-items:center;justify-content:center;">🍰</div>
                 </td>
-                <td><strong><%= cake.name %></strong></td>
-                <td><%= cake.category %></td>
-                <td>रू <%= cake.price.toLocaleString() %></td>
-                <td><%= cake.featured ? '⭐' : '—' %></td>
+                <td class="row-click"><strong><%= cake.name %></strong></td>
+                <td class="row-click"><%= cake.category %></td>
+                <td class="row-click">रू <%= cake.price.toLocaleString() %></td>
+                <td class="row-click"><%= cake.featured ? '⭐' : '—' %></td>
                 <td>
-                  <div class="actions">
+                  <div class="actions" onclick="event.stopPropagation()">
                     <button class="btn-sm edit" onclick='editCake(<%= JSON.stringify(cake) %>)'>Edit</button>
                     <form method="POST" action="/admin/cakes/<%= cake.id %>/delete" style="display:inline;" onsubmit="return confirm('Delete <%= cake.name %>?')">
                       <button type="submit" class="btn-sm delete">Delete</button>
@@ -146,6 +146,24 @@
           </div>
           <button type="submit" class="btn btn-primary">Change Password</button>
         </form>
+      </div>
+    </div>
+
+    <div id="cake-detail-view">
+      <div class="cake-detail-banner">
+        <button class="back-btn" onclick="hideCakeDetail()">← Back to Dashboard</button>
+        <div class="cake-detail-body">
+          <img src="" alt="" class="detail-image" id="detail-image">
+          <div class="detail-info">
+            <h2 id="detail-name"></h2>
+            <div class="detail-meta">
+              <span class="detail-tag" id="detail-category"></span>
+              <span class="detail-tag">⭐ Featured</span>
+            </div>
+            <div class="detail-price" id="detail-price"></div>
+            <div class="detail-desc" id="detail-desc"></div>
+          </div>
+        </div>
       </div>
     </div>
   </main>
@@ -223,7 +241,36 @@ function closeEditModal() {
   document.getElementById('editModal').classList.remove('open');
 }
 
+function showCakeDetail(cake) {
+  document.getElementById('detail-image').src = cake.image || '';
+  document.getElementById('detail-image').alt = cake.name;
+  document.getElementById('detail-name').textContent = cake.name;
+  document.getElementById('detail-category').textContent = cake.category;
+  document.getElementById('detail-price').textContent = 'रू ' + Number(cake.price).toLocaleString();
+  document.getElementById('detail-desc').textContent = cake.description || 'No description available.';
+  var featuredTag = document.querySelector('#detail-category + .detail-tag');
+  if (featuredTag) {
+    featuredTag.style.display = cake.featured ? 'inline-block' : 'none';
+  }
+  document.querySelectorAll('.section-content').forEach(function(el) { el.style.display = 'none'; });
+  document.getElementById('cake-detail-view').classList.add('visible');
+}
+
+function hideCakeDetail() {
+  document.getElementById('cake-detail-view').classList.remove('visible');
+  document.querySelectorAll('.admin-nav a').forEach(function(a) {
+    if (a.getAttribute('href') === '#cakes') a.click();
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.cake-row').forEach(function(row) {
+    row.addEventListener('click', function(e) {
+      if (e.target.closest('.actions')) return;
+      var cake = JSON.parse(this.getAttribute('data-cake'));
+      showCakeDetail(cake);
+    });
+  });
   var toggle = document.querySelector('.admin-toggle');
   var sidebar = document.querySelector('.admin-sidebar');
   var overlay = document.querySelector('.admin-sidebar-overlay');

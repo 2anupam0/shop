@@ -1192,8 +1192,8 @@ nav a:hover, nav a.active {
 
 /* ===== FOOTER ===== */
 footer {
-  background: var(--brown-800);
-  color: white;
+  background: #E6B8A2;
+  color: var(--brown-800);
   padding: 60px 0 0;
   position: relative;
   overflow: hidden;
@@ -1206,7 +1206,7 @@ footer::before {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold-400), var(--blush), var(--gold-400), transparent);
+  background: linear-gradient(90deg, transparent, var(--brown-600), var(--brown-400), var(--brown-600), transparent);
 }
 
 .footer-grid {
@@ -1217,7 +1217,7 @@ footer::before {
 }
 
 .footer-brand-desc {
-  color: rgba(255,255,255,0.5);
+  color: rgba(60,26,26,0.65);
   font-size: 0.88rem;
   line-height: 1.8;
   margin-top: 12px;
@@ -1234,13 +1234,13 @@ footer::before {
   width: 38px;
   height: 38px;
   border-radius: 10px;
-  background: rgba(255,255,255,0.06);
+  background: rgba(60,26,26,0.08);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
   transition: 0.3s;
-  color: rgba(255,255,255,0.5);
+  color: rgba(60,26,26,0.6);
 }
 
 .footer-social a:hover {
@@ -1254,7 +1254,7 @@ footer h4 {
   font-weight: 700;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
+  color: rgba(60,26,26,0.5);
   margin-bottom: 18px;
 }
 
@@ -1263,18 +1263,18 @@ footer ul li {
 }
 
 footer ul li a {
-  color: rgba(255,255,255,0.5);
+  color: rgba(60,26,26,0.7);
   font-size: 0.88rem;
   transition: 0.25s;
 }
 
 footer ul li a:hover {
-  color: var(--gold-400);
+  color: var(--brown-800);
   padding-left: 5px;
 }
 
 .footer-hours p {
-  color: rgba(255,255,255,0.5);
+  color: rgba(60,26,26,0.65);
   font-size: 0.88rem;
   margin-bottom: 8px;
 }
@@ -1285,7 +1285,7 @@ footer ul li a:hover {
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(60,26,26,0.12);
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
@@ -1295,7 +1295,7 @@ footer ul li a:hover {
 }
 
 .footer-bottom .copy {
-  color: rgba(255,255,255,0.3);
+  color: rgba(60,26,26,0.5);
   font-size: 0.8rem;
 }
 
@@ -1305,7 +1305,7 @@ footer ul li a:hover {
 }
 
 .footer-bottom .footer-badges span {
-  color: rgba(255,255,255,0.3);
+  color: rgba(60,26,26,0.5);
   font-size: 0.75rem;
   display: flex;
   align-items: center;

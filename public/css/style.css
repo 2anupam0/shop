@@ -222,11 +222,11 @@ header nav {
 }
 
 header.scrolled {
-  background: rgba(108, 70, 50, 0.88);
+  background: rgba(154, 184, 155, 0.92);
   backdrop-filter: blur(24px) saturate(1.6);
   -webkit-backdrop-filter: blur(24px) saturate(1.6);
-  box-shadow: 0 4px 30px rgba(60, 26, 26, 0.2);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(60, 26, 26, 0.1);
+  border-bottom: 1px solid rgba(60, 26, 26, 0.08);
 }
 
 header .container {
@@ -239,6 +239,19 @@ header .container {
 
 header.scrolled .container {
   padding: 6px 24px;
+}
+
+header.scrolled nav a {
+  color: rgba(60,26,26,0.85);
+}
+
+header.scrolled nav a:hover,
+header.scrolled nav a.active {
+  color: var(--brown-800);
+}
+
+header.scrolled .menu-toggle {
+  color: var(--brown-800);
 }
 
 .logo {
@@ -261,7 +274,6 @@ header.scrolled .container {
 
 header.scrolled .logo-img {
   height: 70px;
-  filter: brightness(0) invert(1) opacity(0.85);
 }
 
 nav a {

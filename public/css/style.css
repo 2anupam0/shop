@@ -659,6 +659,104 @@ nav a:hover, nav a.active {
   opacity: 0.95;
 }
 
+.offer-premium {
+  background: #8FBF9F;
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.offer-premium-icons {
+  font-size: 1.6rem;
+  letter-spacing: 12px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 8px;
+}
+
+.offer-premium-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+}
+
+.offer-premium-desc {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.9);
+  max-width: 520px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+.offer-premium-pill {
+  display: inline-block;
+  background: #F5E9DA;
+  color: #4D2E2E;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 4px 18px;
+  border-radius: 50px;
+  margin: 0 4px;
+}
+
+.offer-premium-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-offer-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 38px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #D4A373, #E6B98C);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.btn-offer-primary:hover {
+  background: linear-gradient(135deg, #C38E5F, #D4A373);
+  transform: scale(1.05);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.2);
+}
+
+.btn-offer-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 38px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  background: #4F8F6C;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(79, 143, 108, 0.3);
+  transition: 0.3s ease;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.btn-offer-secondary:hover {
+  background: #3E7357;
+  transform: scale(1.05);
+  box-shadow: 0 10px 28px rgba(79, 143, 108, 0.4);
+}
+
 @keyframes marqueeScroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }

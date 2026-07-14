@@ -6,39 +6,23 @@
 }
 
 :root {
-  --brown-50: #F7F0EA;
-  --brown-100: #EDE0D4;
-  --brown-200: #D4BFA8;
-  --brown-300: #B8957A;
-  --brown-400: #8B6B50;
+  --brown-50: #FEFEFD;
+  --brown-100: #E6D2BA;
+  --brown-200: #DADAD6;
+  --brown-300: #9D98A1;
+  --brown-400: #9D98A1;
   --brown-500: #6B3A2A;
   --brown-600: #54281A;
   --brown-700: #3C1A1A;
   --brown-800: #2D0D0D;
   --brown-900: #1A0808;
-  --gold-50: #FFFBEB;
-  --gold-100: #FEF3C7;
-  --gold-200: #FDE68A;
-  --gold-300: #FCD34D;
-  --gold-400: #D4A853;
-  --gold-500: #C9953C;
-  --gold-600: #B07D2E;
-  --gold-700: #8B5E1E;
-  --blush: #E8C4B8;
-  --blush-light: #F2DFD8;
-  --cream-50: #FDF8F5;
-  --cream-100: #FAF6F2;
-  --cream-200: #F7F0EB;
-  --gray-50: #f9fafb;
-  --gray-100: #f3f4f6;
-  --gray-200: #e5e7eb;
-  --gray-300: #d1d5db;
-  --gray-400: #9ca3af;
-  --gray-500: #6b7280;
-  --gray-600: #4b5563;
-  --gray-700: #374151;
-  --gray-800: #1f2937;
-  --gray-900: #111827;
+  --gold-400: #B4B881;
+  --gold-500: #B4B881;
+  --blush: #E6D2BA;
+  --blush-light: #FEFEFD;
+  --cream-50: #FEFEFD;
+  --cream-100: #E6D2BA;
+  --cream-200: #E6D2BA;
   --glass-bg: rgba(255, 255, 255, 0.15);
   --glass-border: rgba(255, 255, 255, 0.2);
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
@@ -63,9 +47,9 @@ body {
 
 /* ===== CUSTOM SCROLLBAR ===== */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #FAFAF8; }
+::-webkit-scrollbar-track { background: #FEFEFD; }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #D4BFA8, #8B6B50);
+  background: linear-gradient(180deg, #DADAD6, #9D98A1);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover { background: #6B3A2A; }
@@ -329,7 +313,7 @@ nav a:hover, nav a.active {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(165deg, #FFF8F3 0%, #F7F0EA 25%, #F0E6DC 50%, #EDE0D4 75%, #E8D5C5 100%);
+  background: linear-gradient(165deg, #FEFEFD 0%, #FEFEFD 25%, #E6D2BA 50%, #E6D2BA 75%, #DADAD6 100%);
   background-size: 300% 300%;
   animation: gradientShift 16s ease infinite;
   padding: 120px 0 80px;
@@ -898,11 +882,11 @@ nav a:hover, nav a.active {
 }
 
 .cake-ribbon.new {
-  background: linear-gradient(135deg, var(--gold-400), #E8A040);
+  background: linear-gradient(135deg, var(--gold-400), #9D98A1);
 }
 
-.cake-ribbon.new::before {
-  border-color: #E8A040;
+.ribbon.new::before {
+  border-color: #9D98A1;
   border-left-color: transparent;
   border-bottom-color: transparent;
 }
@@ -964,7 +948,7 @@ nav a:hover, nav a.active {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--gold-400), #E8C4B8);
+  background: linear-gradient(135deg, var(--gold-400), #E6D2BA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1007,7 +991,7 @@ nav a:hover, nav a.active {
 
 /* ===== MENU PAGE ===== */
 .menu-header {
-  background: linear-gradient(135deg, #FFF8F3, #F7F0EA, #EDE0D4, #D4BFA8);
+  background: linear-gradient(135deg, #FEFEFD, #E6D2BA, #E6D2BA, #DADAD6);
   background-size: 300% 300%;
   animation: gradientShift 12s ease infinite;
   padding: 140px 0 50px;
@@ -1160,7 +1144,7 @@ nav a:hover, nav a.active {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--gold-400), #D4A853, var(--blush), #D4A853, var(--gold-400));
+  background: linear-gradient(90deg, var(--gold-400), #B4B881, var(--blush), #B4B881, var(--gold-400));
   background-size: 200% 100%;
   animation: gradientShift 4s ease infinite;
 }
@@ -1338,7 +1322,7 @@ footer .logo-img {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(160deg, #FFF8F3, #F7F0EA, #EDE0D4, #D4BFA8);
+  background: linear-gradient(160deg, #FEFEFD, #E6D2BA, #E6D2BA, #DADAD6);
   background-size: 300% 300%;
   animation: gradientShift 10s ease infinite;
 }

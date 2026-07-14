@@ -250,10 +250,10 @@ header.scrolled .container {
 }
 
 .logo-img {
-  height: 70px;
+  height: 105px;
   width: auto;
   display: block;
-  transition: opacity 0.3s;
+  transition: height 0.4s ease, opacity 0.3s;
 }
 
 .logo-img:hover {
@@ -261,6 +261,7 @@ header.scrolled .container {
 }
 
 header.scrolled .logo-img {
+  height: 70px;
   filter: brightness(0) invert(1) opacity(0.85);
 }
 
@@ -1734,7 +1735,8 @@ footer .logo-img {
   .contact-grid { gap: 80px; }
   header .container { padding: 22px 40px; }
   header.scrolled .container { padding: 14px 40px; }
-  .logo-img { height: 80px; }
+  .logo-img { height: 120px; }
+  header.scrolled .logo-img { height: 80px; }
   nav a { margin-left: 38px; font-size: 0.95rem; }
 }
 
@@ -1772,7 +1774,8 @@ footer .logo-img {
   .section { padding: 70px 0; }
 
   .cake-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .logo-img { height: 60px; }
+  .logo-img { height: 90px; }
+  header.scrolled .logo-img { height: 60px; }
 
   nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(60, 26, 26, 0.95); backdrop-filter: blur(20px); flex-direction: column; padding: 12px 28px; }
   nav.open { display: flex; }
@@ -1813,7 +1816,8 @@ footer .logo-img {
 
   .cake-grid { grid-template-columns: 1fr; gap: 20px; max-width: 400px; margin: 0 auto; }
   .cake-card .img-wrap { height: 200px; }
-  .logo-img { height: 55px; }
+  .logo-img { height: 82px; }
+  header.scrolled .logo-img { height: 55px; }
 
   nav {
     display: none;
@@ -1881,7 +1885,8 @@ footer .logo-img {
   .section-subtitle { font-size: 0.85rem; }
   .section { padding: 40px 0; }
 
-  .logo-img { height: 50px; }
+  .logo-img { height: 75px; }
+  header.scrolled .logo-img { height: 50px; }
 
   .cake-grid { gap: 16px; }
   .cake-card .img-wrap { height: 180px; }
@@ -1921,7 +1926,8 @@ footer .logo-img {
   .section-subtitle { font-size: 0.8rem; }
   .section { padding: 30px 0; }
 
-  .logo-img { height: 44px; }
+  .logo-img { height: 66px; }
+  header.scrolled .logo-img { height: 44px; }
 
   .cake-grid { gap: 14px; }
   .cake-card .img-wrap { height: 160px; }

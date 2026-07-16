@@ -2288,7 +2288,7 @@ footer .logo-img {
   .section { padding: 50px 0; }
   .section-decoration { font-size: 0.9rem; letter-spacing: 4px; }
 
-  .cake-grid { grid-template-columns: 1fr; gap: 20px; max-width: 400px; margin: 0 auto; }
+  .cake-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .cake-card .img-wrap { height: 200px; }
   .logo-img { height: 72px; }
   header.scrolled .logo-img { height: 55px; }

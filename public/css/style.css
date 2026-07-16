@@ -1018,7 +1018,7 @@ nav a:hover, nav a.active {
 /* ===== FEATURED CAKES ===== */
 .cake-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   gap: 28px;
   perspective: 1400px;
 }
@@ -2189,7 +2189,7 @@ footer .logo-img {
   .hero-badge { font-size: 0.9rem; padding: 12px 32px; }
   .section-title { font-size: 3.5rem; }
   .section { padding: 120px 0; }
-  .cake-grid { grid-template-columns: repeat(2, 1fr); gap: 35px; }
+  .cake-grid { grid-template-columns: repeat(4, 1fr); gap: 35px; }
   .cake-card .body { padding: 28px; }
   .stats-grid { gap: 40px; }
   .stat-number { font-size: 3.5rem; }
@@ -2209,7 +2209,7 @@ footer .logo-img {
 @media (min-width: 1200px) and (max-width: 1399px) {
   .container { max-width: 1200px; }
   .hero h1 { font-size: 5rem; }
-  .cake-grid { grid-template-columns: repeat(2, 1fr); }
+  .cake-grid { grid-template-columns: repeat(3, 1fr); }
   .offer-premium { padding: 90px 0; }
   .offer-premium-title { font-size: 2.8rem; }
 }
@@ -2217,7 +2217,7 @@ footer .logo-img {
 /* === SMALL DESKTOP / LAPTOP (992px-1199px) === */
 @media (min-width: 992px) and (max-width: 1199px) {
   .hero h1 { font-size: 4.2rem; }
-  .cake-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .cake-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .stats-grid { gap: 20px; }
   .stat-number { font-size: 2.6rem; }
   .footer-grid { gap: 35px; }

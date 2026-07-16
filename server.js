@@ -130,6 +130,7 @@ app.post('/admin/cakes', isAdmin, upload.single('image'), (req, res) => {
     name: req.body.name,
     category: req.body.category,
     price: parseFloat(req.body.price) || 0,
+    discount: Math.min(100, Math.max(0, parseFloat(req.body.discount) || 0)),
     description: req.body.description || '',
     image: req.file ? '/uploads/' + req.file.filename : '',
     featured: req.body.featured === 'on'
@@ -146,6 +147,7 @@ app.post('/admin/cakes/:id', isAdmin, upload.single('image'), (req, res) => {
   cakes[idx].name = req.body.name;
   cakes[idx].category = req.body.category;
   cakes[idx].price = parseFloat(req.body.price) || 0;
+  cakes[idx].discount = Math.min(100, Math.max(0, parseFloat(req.body.discount) || 0));
   cakes[idx].description = req.body.description || '';
   cakes[idx].featured = req.body.featured === 'on';
   if (req.file) cakes[idx].image = '/uploads/' + req.file.filename;

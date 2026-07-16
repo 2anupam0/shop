@@ -4,6 +4,7 @@
     "name": "Chocolate Dream",
     "category": "Chocolate",
     "price": 1200,
+    "discount": 10,
     "description": "Rich moist chocolate cake layered with silky chocolate ganache and topped with chocolate shavings.",
     "image": "/uploads/cake1.webp",
     "featured": true
@@ -13,6 +14,7 @@
     "name": "Vanilla Buttercream",
     "category": "Vanilla",
     "price": 1000,
+    "discount": 0,
     "description": "Classic vanilla sponge with smooth buttercream frosting and rainbow sprinkles.",
     "image": "/uploads/cake2.webp",
     "featured": true
@@ -22,6 +24,7 @@
     "name": "Red Velvet",
     "category": "Custom",
     "price": 1500,
+    "discount": 15,
     "description": "Velvety red cake with cream cheese frosting, a timeless favorite for special occasions.",
     "image": "/uploads/cake3.jpg",
     "featured": true
@@ -31,6 +34,7 @@
     "name": "Black Forest",
     "category": "Chocolate",
     "price": 1400,
+    "discount": 20,
     "description": "Decadent chocolate cake with cherries, whipped cream, and chocolate flakes.",
     "image": "/uploads/cake4.jpg",
     "featured": false
@@ -40,6 +44,7 @@
     "name": "Fruit Cake",
     "category": "Custom",
     "price": 1800,
+    "discount": 5,
     "description": "Premium fruit cake loaded with dry fruits, nuts, and a hint of brandy.",
     "image": "/uploads/cake5.jpg",
     "featured": false
@@ -49,6 +54,7 @@
     "name": "Pineapple Delight",
     "category": "Vanilla",
     "price": 1100,
+    "discount": 0,
     "description": "Light vanilla cake with pineapple chunks and creamy frosting.",
     "image": "/uploads/cake6.jpg",
     "featured": false
@@ -58,6 +64,7 @@
     "name": "Chocolate Truffle",
     "category": "Chocolate",
     "price": 1600,
+    "discount": 25,
     "description": "Ultra-rich chocolate truffle cake with a glossy mirror glaze.",
     "image": "/uploads/cake7.jpg",
     "featured": true
@@ -67,6 +74,7 @@
     "name": "Custom Birthday Cake",
     "category": "Custom",
     "price": 2000,
+    "discount": 10,
     "description": "Personalized birthday cake with custom message and theme decoration.",
     "image": "/uploads/cake8.jpg",
     "featured": true
@@ -76,6 +84,7 @@
     "name": "Cheese Cake",
     "category": "Custom",
     "price": 1500,
+    "discount": 0,
     "description": "Creamy cheese cake with a buttery graham crust, perfect for special occasions.",
     "image": "/uploads/cake9.jpg",
     "featured": true
@@ -85,6 +94,7 @@
     "name": "Berry Bliss",
     "category": "Vanilla",
     "price": 1300,
+    "discount": 12,
     "description": "Light vanilla cake with mixed berry compote and fresh cream topping.",
     "image": "/uploads/cake10.jpg",
     "featured": false
@@ -94,6 +104,7 @@
     "name": "Classic Sponge",
     "category": "Vanilla",
     "price": 900,
+    "discount": 0,
     "description": "Soft and fluffy classic sponge cake, perfect for any occasion.",
     "image": "/uploads/cake11.webp",
     "featured": false

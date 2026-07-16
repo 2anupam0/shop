@@ -52,6 +52,12 @@
               <input type="number" id="price" name="price" required step="0.01" placeholder="1200">
             </div>
             <div class="form-group">
+              <label for="discount">Discount (%)</label>
+              <input type="number" id="discount" name="discount" min="0" max="100" step="1" placeholder="0" value="0">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
               <label for="image">Image</label>
               <input type="file" id="image" name="image" accept="image/*">
             </div>
@@ -81,6 +87,7 @@
                 <th>Name</th>
                 <th>Category</th>
                 <th>Price</th>
+                <th>Disc.</th>
                 <th>Featured</th>
                 <th>Actions</th>
               </tr>
@@ -95,6 +102,7 @@
                 <td><strong><%= cake.name %></strong></td>
                 <td><%= cake.category %></td>
                 <td>रू <%= cake.price.toLocaleString() %></td>
+                <td><%= cake.discount ? cake.discount + '%' : '—' %></td>
                 <td><%= cake.featured ? '⭐' : '—' %></td>
                 <td>
                   <div class="actions">
@@ -179,6 +187,12 @@
           <input type="number" id="edit-price" name="price" required step="0.01">
         </div>
         <div class="form-group">
+          <label for="edit-discount">Discount (%)</label>
+          <input type="number" id="edit-discount" name="discount" min="0" max="100" step="1" placeholder="0">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
           <label for="edit-image">Image (leave empty to keep current)</label>
           <input type="file" id="edit-image" name="image" accept="image/*">
         </div>
@@ -213,6 +227,7 @@ function editCake(cake) {
   document.getElementById('edit-name').value = cake.name;
   document.getElementById('edit-category').value = cake.category;
   document.getElementById('edit-price').value = cake.price;
+  document.getElementById('edit-discount').value = cake.discount || 0;
   document.getElementById('edit-description').value = cake.description || '';
   document.getElementById('edit-featured').checked = cake.featured || false;
   document.getElementById('editForm').action = '/admin/cakes/' + cake.id;

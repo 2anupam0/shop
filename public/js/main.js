@@ -366,3 +366,136 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 })();
+
+// ===== CART SYSTEM =====
+
+var cart = JSON.parse(localStorage.getItem('cakeCart') || '[]');
+
+function saveCart() {
+  localStorage.setItem('cakeCart', JSON.stringify(cart));
+  updateCartBadge();
+}
+
+function updateCartBadge() {
+  var count = cart.reduce(function(sum, item) { return sum + item.qty; }, 0);
+  var badge = document.getElementById('cartBadge');
+  if (badge) {
+    badge.textContent = count;
+    badge.classList.toggle('show', count > 0);
+  }
+}
+
+function addToCart(id, name, price, image) {
+  var existing = cart.find(function(item) { return item.id === id; });
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ id: id, name: name, price: price, image: image, qty: 1 });
+  }
+  saveCart();
+  renderCart();
+  openCart();
+  showToast(name + ' added to cart!', 'success');
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(function(item) { return item.id !== id; });
+  saveCart();
+  renderCart();
+  if (cart.length === 0) closeCart();
+}
+
+function updateQty(id, delta) {
+  var item = cart.find(function(i) { return i.id === id; });
+  if (!item) return;
+  item.qty += delta;
+  if (item.qty <= 0) {
+    removeFromCart(id);
+    return;
+  }
+  saveCart();
+  renderCart();
+}
+
+function renderCart() {
+  var container = document.getElementById('cartItems');
+  var footer = document.getElementById('cartFooter');
+  if (!container) return;
+  if (cart.length === 0) {
+    container.innerHTML = '<div class="cart-empty">Your cart is empty</div>';
+    if (footer) footer.style.display = 'none';
+    return;
+  }
+  var html = '';
+  var subtotal = 0;
+  cart.forEach(function(item) {
+    var total = item.price * item.qty;
+    subtotal += total;
+    html += '<div class="cart-item">';
+    html += '<img src="' + (item.image || '') + '" alt="" class="cart-item-img" onerror="this.style.display=\'none\'">';
+    html += '<div class="cart-item-info">';
+    html += '<h4>' + item.name + '</h4>';
+    html += '<div class="cart-item-price">रू ' + Number(item.price).toLocaleString() + ' each</div>';
+    html += '<div class="cart-item-qty">';
+    html += '<button onclick="updateQty(' + item.id + ',-1)">−</button>';
+    html += '<span>' + item.qty + '</span>';
+    html += '<button onclick="updateQty(' + item.id + ',1)">+</button>';
+    html += '</div></div>';
+    html += '<button class="cart-item-remove" onclick="removeFromCart(' + item.id + ')">✕</button>';
+    html += '</div>';
+  });
+  container.innerHTML = html;
+  if (footer) {
+    footer.style.display = 'block';
+    var total = subtotal;
+    document.getElementById('cartSubtotal').textContent = 'रू ' + subtotal.toLocaleString();
+    document.getElementById('cartTotal').textContent = 'रू ' + total.toLocaleString();
+    document.getElementById('cartSavings').textContent = 'रू 0';
+  }
+}
+
+function openCart() {
+  document.getElementById('cartSidebar').classList.add('open');
+  document.getElementById('cartOverlay').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCart() {
+  document.getElementById('cartSidebar').classList.remove('open');
+  document.getElementById('cartOverlay').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+function checkoutCart() {
+  if (cart.length === 0) return;
+  var text = 'Hi ANUPAMA Cake Shop!%0A%0A🛒 *New Order:*%0A';
+  cart.forEach(function(item) {
+    text += '• ' + item.name + ' x' + item.qty + ' = रू ' + (item.price * item.qty) + '%0A';
+  });
+  var total = cart.reduce(function(sum, item) { return sum + item.price * item.qty; }, 0);
+  text += '%0A*Total: रू ' + total + '*%0A%0APlease confirm my order.';
+  window.open('https://wa.me/9779763624678?text=' + encodeURIComponent(text), '_blank');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  updateCartBadge();
+  renderCart();
+  document.getElementById('cartToggle').addEventListener('click', function(e) {
+    e.preventDefault();
+    if (cart.length === 0) { showToast('Your cart is empty', 'info'); return; }
+    openCart();
+  });
+  document.getElementById('cartClose').addEventListener('click', closeCart);
+  document.getElementById('cartOverlay').addEventListener('click', closeCart);
+  document.getElementById('cartCheckout').addEventListener('click', checkoutCart);
+  document.querySelectorAll('.add-to-cart').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var id = parseInt(this.getAttribute('data-id'));
+      var name = this.getAttribute('data-name');
+      var price = parseFloat(this.getAttribute('data-price'));
+      var image = this.getAttribute('data-image');
+      addToCart(id, name, price, image);
+    });
+  });
+});

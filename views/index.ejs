@@ -73,9 +73,16 @@
     <p class="section-subtitle reveal reveal-delay-1">Our most beloved creations, baked fresh just for you</p>
     <div class="cake-grid">
       <% cakes.forEach((cake, idx) => { %>
+      <%
+        var finalPrice = cake.price;
+        var hasDiscount = cake.discount && cake.discount > 0;
+        if (hasDiscount) finalPrice = cake.price - (cake.price * cake.discount / 100);
+      %>
       <div class="cake-card reveal" style="transition-delay:<%= 0.1 * (idx + 1) %>s">
-        <% if (cake.featured) { %><div class="cake-ribbon featured">★ Featured</div><% } %>
         <div class="img-wrap">
+          <% if (hasDiscount) { %>
+          <div class="discount-badge">-<%= cake.discount %>%</div>
+          <% } %>
           <img src="<%= cake.image || '' %>" alt="<%= cake.name %>" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.img-placeholder').style.display='flex'">
           <div class="img-placeholder" style="display:none;">🎂</div>
         </div>
@@ -84,11 +91,16 @@
           <h3><%= cake.name %></h3>
           <div class="price-tag">
             <span class="price-icon">💰</span>
+            <% if (hasDiscount) { %>
+            <span class="original-price">रू <%= cake.price.toLocaleString() %></span>
+            <span class="final-price">रू <%= finalPrice.toLocaleString() %></span>
+            <% } else { %>
             <span class="price"><span class="currency">रू</span> <%= cake.price.toLocaleString() %></span>
+            <% } %>
           </div>
           <p><%= cake.description %></p>
           <div class="card-actions">
-            <button class="btn btn-primary" onclick="openOrderModal('<%= cake.name %>','<%= cake.image || '' %>')">Order</button>
+            <button class="btn btn-primary add-to-cart" data-id="<%= cake.id %>" data-name="<%= cake.name %>" data-price="<%= finalPrice %>" data-image="<%= cake.image || '' %>">Add to Cart</button>
             <a href="https://wa.me/9779763624678?text=Hi%20ANUPAMA%20Cake%20Shop!%20I%20want%20to%20order%20<%= encodeURIComponent(cake.name) %>%0A%0A📸%20Photo:%20<%= encodeURIComponent(cake.image ? baseUrl + cake.image : '') %>" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
           </div>
         </div>

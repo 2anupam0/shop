@@ -1297,30 +1297,6 @@ nav a:hover, nav a.active {
   flex-wrap: wrap;
 }
 
-.contact-qr {
-  margin-top: 24px;
-  text-align: center;
-  padding: 20px;
-  background: white;
-  border-radius: 16px;
-  border: 1px solid var(--cream-200);
-}
-
-.contact-qr h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1rem;
-  color: var(--brown-600);
-  margin-bottom: 12px;
-}
-
-.contact-qr .qr-img {
-  width: 140px;
-  height: 140px;
-  border-radius: 12px;
-  display: block;
-  margin: 0 auto;
-}
-
 .contact-form-title {
   font-family: 'Playfair Display', serif;
   font-size: 1.3rem;
@@ -2295,8 +2271,6 @@ footer .logo-img {
   .contact-offer-card p { font-size: 0.9rem; }
   .contact-offer-actions { flex-direction: column; gap: 10px; }
   .contact-offer-actions .btn-offer-secondary { width: 100%; max-width: 100%; justify-content: center; padding: 14px 24px; font-size: 0.9rem; }
-  .contact-qr { padding: 16px; margin-top: 20px; }
-  .contact-qr .qr-img { width: 120px; height: 120px; }
   .contact-form { padding: 24px; border-radius: 16px; }
   .contact-form-title { font-size: 1.2rem; margin-bottom: 16px; }
   .form-group { margin-bottom: 16px; }
